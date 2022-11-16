@@ -40,9 +40,10 @@ async function getListings() {
       for (let i = 0; i < data.length; i++){
         // console.log(data[i].title)
         // console.log(data[i].media)
-        for(let j = 0; i< data[i].media.length; j++){
-            console.log(data[i].media[j])
-        }
+        // for(let j = 0; i< data[i].media.length; j++){
+        //     //warning infinite loop
+        //     // console.log(data[i].media[j])
+        // }
         userListings.innerHTML += 
                                     `
                                     <div class="container listing-item border">
