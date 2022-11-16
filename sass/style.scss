@@ -1,0 +1,125 @@
+@import "_variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success_hidden {
+    display: none;
+
+}
+
+.danger_hidden {
+    display: none;
+}
+
+.home_icon {
+    height: 25px;
+    max-width: 25px;
+}
+
+.btn_logout {
+    max-width: 60px;
+    max-height: 30px;
+    position: absolute;
+    top: 25px;
+}
+
+ul {
+    display: flex;
+}
+
+.profile-img-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 2px white;
+    object-fit: cover;
+    transition: border 300ms ease-out;
+}
+
+//not working
+.profile-img-small:hover {
+    border-color: linear-gradient(to right, red, purple)
+}
+
+// .btn-logout {
+//     position: absolute;
+//     right: 15px;
+// }
+
+
+.header-name-container * {
+    color: $white;
+}
+
+.item-img {
+    object-fit: contain;
+    height: 200px;
+    width: 200px;
+}
+
+
+.module-border-wrap {
+    max-width: 250px;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to right, blue, green);
+    padding: 3px;
+}
+
+.module {
+    background: #222;
+    color: white;
+    padding: 2rem;
+}
+
+body {
+    // background-color: #222;
+
+}
+
+.hamburger-container {
+    height: 100%;
+    width: 200px;
+    background-color: red;
+    // position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 5;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.hamburger-menu * {
+    margin: 10px 0px;
+}
+
+.close-hamburger {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+.close-hamburger-container {
+    display: none;
+}
+
+.hamburger-icon {
+    width: 25px;
+    right: 10px;
+    top: 25px;
+
+}
+
+
+@media only screen and (min-width: 500px) {}

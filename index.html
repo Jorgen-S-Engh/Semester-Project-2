@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/login.js"></script>
+    <title>title</title>
+</head>
+
+<body>
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="my-5 display-5 fw-bold ls-tight">
+                    Auction House
+
+                </h1>
+                <p class="mb-4 opacity-70">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum nobis, sequi eveniet saepe nostrum
+                    debitis!
+
+                </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="card bg-glass">
+                    <div class="alert alert-danger danger_hidden text-center" role="alert">
+                        <p>Something went wrong: </p>
+                        <p class="create_account_error"></p>
+                    </div>
+
+                    <div class="card-body px-4 py-5 px-md-5 px-lg-5">
+                        <h2>Login</h2>
+                        <form action="" class="row g-3">
+                            <div>
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control login_email" />
+                            </div>
+                            <div>
+                                <label class="form-label">password</label>
+                                <input type="text" class="form-control login_password" />
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary login_btn" type="submit">
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+                        <hr>
+                        <p class="text-center">Or</p>
+                        <form class="text-center" action="create-account.html">
+                            <button class="btn btn-primary">Create new account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">About</a>
+            </li>
+        </ul>
+        <p class="text-center text-muted">© 2022 FrontFace</p>
+    </footer>
+</body>
+
+</html>

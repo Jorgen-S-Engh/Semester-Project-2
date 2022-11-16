@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/create-account.js"></script>
+    <title>Create account to FrontFace</title>
+</head>
+
+<body>
+    <section class="background-radial-gradient overflow-hidden">
+        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+            <div class="row gx-lg-5 align-items-center mb-5">
+                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                    <h1 class="my-5 display-5 fw-bold ls-tight">
+                        FrontFace
+                    </h1>
+                    <p class="mb-4 opacity-70">
+                        FrontFace is the new social media site which lets you connect with
+                        frontend-developers from around the world.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                    <div class="card bg-glass">
+                        <div class="alert alert-success success_hidden text-center" role="alert">
+                            <p>Account created!</p>
+                            <p>Returning to login</p>
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger danger_hidden" role="alert">
+                            <p>Something went wrong: </p>
+                            <p class="create_account_error"></p>
+                        </div>
+                        <div class="card-body px-4 py-5 px-md-5">
+                            <h2>Create Account</h2>
+                            <form action="" class="row g-3">
+                                <div class="input_container_CA">
+                                    <div>
+                                        <label class="form-label">Name</label>
+                                        <input type="text" class="form-control login_name" placeholder="Required" />
+                                    </div>
+                                    <div>
+                                        <label class="form-label">Email</label>
+                                        <input type="text" class="form-control login_email" placeholder="Required" />
+                                    </div>
+                                    <div>
+                                        <label class="form-label">Avatar</label>
+                                        <input type="text" class="form-control login_avatar" placeholder="Optional" />
+                                    </div>
+                                    <div>
+                                        <label class="form-label">password</label>
+                                        <input type="text" class="form-control login_password" placeholder="Required" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-primary create_acc_btn" type="submit">
+                                        Create account
+                                    </button>
+                                </div>
+                            </form>
+                            <hr>
+
+                            <form class="text-center" action="index.html">
+                                <p>Or</p>
+                                <button class="btn btn-primary">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-muted">About</a>
+            </li>
+        </ul>
+        <p class="text-center text-muted">© 2022 FrontFace</p>
+    </footer>
+</body>
+
+</html>
