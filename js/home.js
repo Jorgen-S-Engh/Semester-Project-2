@@ -1,5 +1,4 @@
 
-
 const profileName = document.querySelector(".header-name").innerHTML = `${localStorage.getItem("name")}`
 const profileImg = document.querySelector(".profile-img-small")
 
@@ -17,11 +16,9 @@ setImg();
 const btnLogout = document.querySelector(".btn-logout")
 
 btnLogout.addEventListener("click", () =>{
+    console.log("click")
     localStorage.clear();
     window.location = "index.html";
 })
-
-
-
 
 
