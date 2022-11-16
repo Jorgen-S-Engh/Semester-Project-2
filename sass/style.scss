@@ -86,7 +86,6 @@ body {
     height: 100%;
     width: 200px;
     background-color: red;
-    // position: fixed;
     top: 0px;
     right: 0px;
     z-index: 5;
@@ -120,6 +119,17 @@ body {
     top: 25px;
 
 }
+
+.profile-user-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: solid 2px white;
+    object-fit: cover;
+
+}
+
+
 
 
 @media only screen and (min-width: 500px) {}

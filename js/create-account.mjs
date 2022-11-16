@@ -1,4 +1,5 @@
-const url = "https://nf-api.onrender.com/api/v1/social/auth/register";
+import { baseUrl } from "./components/baseUrl.mjs";
+const endpoint = "/auction/auth/register"
 const createAccountBtn = document.querySelector(".create_acc_btn")
 const successMessage = document.querySelector(".alert-success")
 const errorMessage = document.querySelector(".alert-danger")
@@ -27,7 +28,7 @@ async function createAccount (e){
         body : JSON.stringify(user)
     }
     try{
-        const response = await fetch(url, {
+        const response = await fetch(`${baseUrl}${endpoint}`, {
             method:"POST",
             headers:{
                 "Content-Type": "application/json"

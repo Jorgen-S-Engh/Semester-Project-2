@@ -1,4 +1,5 @@
 import { baseUrl } from "./components/baseUrl.mjs";
+// https://nf-api.onrender.com/api/v1"
 
 const loginEmail = document.querySelector(".login_email").value = localStorage.getItem("email")
 const loginPassword = document.querySelector(".login_password").value = localStorage.getItem("password")
@@ -33,16 +34,16 @@ loginBtn.addEventListener("click", (e) => {
         localStorage.setItem("email", data.email);
         localStorage.setItem("avatar", data.avatar);
         localStorage.setItem("accessToken", data.accessToken);
-        // localStorage.setItem("credits", data.credits);
-        window.location.href = "home.html";
+        localStorage.setItem("credits", data.credits);
+        window.location.href = "feed.html";
       }else{
         errorMessage.classList.remove("danger_hidden")
-        errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`}
+        errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
+      }
 
-      console.log(results);
     } catch (e) {
       console.log(e);
     }
   }
-  login("/social/auth/login");
+  login("/auction/auth/login");
 });

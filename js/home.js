@@ -1,3 +1,5 @@
+
+
 const profileName = document.querySelector(".header-name").innerHTML = `${localStorage.getItem("name")}`
 const profileImg = document.querySelector(".profile-img-small")
 
