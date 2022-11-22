@@ -52,7 +52,6 @@ async function getListings() {
                                     </div>
                                     
                                      `
-        
       }
     } catch (e) {
       console.log(e);
@@ -60,6 +59,32 @@ async function getListings() {
 }
 
 getListings();
+
+
+async function allListings() {
+  try {
+    const reply = await fetch(`${baseUrl}/auction/listings`, options)
+    const data = await reply.json();
+  
+    // console.log(d.getUTCHours()); 
+    // console.log(d[Symbol.toPrimitive]('string'));
+    
+    for(let i = 0; i < data.length; i++){
+      let d = new Date(`${data[i].endsAt}`);
+      console.log(d[Symbol.toPrimitive]('string'));
+      console.log(d.getDate(),d.getMonth(), d.getFullYear(), d.getHours(), d.getMinutes())
+      
+
+      
+    }
+    
+
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+allListings();
 
 
 
