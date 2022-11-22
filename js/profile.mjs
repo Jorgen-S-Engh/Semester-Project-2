@@ -54,9 +54,6 @@ async function getListings() {
                                      `
         
       }
-
-
-      
     } catch (e) {
       console.log(e);
     }
