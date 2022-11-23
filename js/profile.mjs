@@ -69,7 +69,7 @@ async function allListings() {
     // console.log(d[Symbol.toPrimitive]('string'));
     for(let i = 0; i < data.length; i++){
       let d = new Date(`${data[i].endsAt}`);
-      console.log(data[i].tags)
+      // console.log(data[i].tags)
       // console.log(d[Symbol.toPrimitive]('string'));
       // console.log(d.getDate(),d.getMonth(), d.getFullYear(), d.getHours(), d.getMinutes())
     }
