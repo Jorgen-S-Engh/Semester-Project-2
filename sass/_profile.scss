@@ -1,0 +1,49 @@
+@import "_variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.profile-user-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: solid 2px white;
+    object-fit: cover;
+}
+
+.modal-container {
+    background-color: $white;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.profile-info-container {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 25px;
+    background-color: $white;
+}
+
+.profile-info-container * {
+    color: $primary;
+}
+
+.new-listing-modal {
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px;
+    background-color: $white;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-hidden {
+    display: none;
+}

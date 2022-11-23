@@ -1,8 +1,13 @@
+@import "_profile.scss";
 @import "_variables";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
     background: linear-gradient(to right, #323859, #1A1826);
+}
+
+nav {
+    border-bottom: 1px solid $gold;
 }
 
 h1,
@@ -75,16 +80,6 @@ h1,
     right: 10px;
     top: 25px;
 }
-
-.profile-user-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: solid 2px white;
-    object-fit: cover;
-}
-
-
 
 
 @media only screen and (min-width: 500px) {}
