@@ -17,17 +17,13 @@ window.onclick = (e) => {
     }
 };
 
-
 // ---------------------------------------Modal -------------------------------------
 const newListBtn = document.querySelector(".new-listing-modal__btn");
+const errorMessage = document.querySelector(".alert-danger")
+const errorInfo = document.querySelector(".create_account_error")
 const baseUrlCE = "https://api.noroff.dev/api/v1"
 
 newListBtn.addEventListener("click", createEntry);
-
-const myTag = "Cat doge bird"
-const myTagArray = myTag.split(" ")
-console.log(myTagArray)
-
 
 async function createEntry () {
     const ceTags = document.querySelector(".CE-tags").value;
@@ -35,11 +31,17 @@ async function createEntry () {
     const ceEndDate = document.querySelector(".CE-end-date").value;
     const ceDesc = document.querySelector(".CE-desc").value;
     const ceTitle = document.querySelector(".CE-title").value;
+    console.log("date is" +ceEndDate)
 
     const ceTagsArray = ceTags.split(" ")
     const ceMediaArray = ceMedia.split(" ")
     newDate = new Date(ceEndDate)
     isoDate = newDate.toISOString();
+    console.log(isoDate)
+
+    if (ceMediaArray[0] === ""){
+        ceMediaArray.length = 0;
+    }
 
     const entry = {
         title: ceTitle,
@@ -49,26 +51,32 @@ async function createEntry () {
         endsAt: isoDate,
     };
 
-    console.log(isoDate)
-    try{
-        const reply = await fetch(`${baseUrlCE}/auction/listings`, {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json; charset=UTF-8",
-                Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+    console.log(entry.title)
 
-            },
-            body: JSON.stringify(entry),
-        });
-        const data = await reply.json();
-        console.log(data)
-
-
+    if (entry.title !== ""){
+        try{
+            const reply = await fetch(`${baseUrlCE}/auction/listings`, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                    Authorization: `Bearer ${localStorage.getItem("accessToken")}`
     
-    }
-
-    catch(e){
-
+                },
+                body: JSON.stringify(entry),
+            });
+            const data = await reply.json();
+            console.log(data)
+            if (reply.status !== 201){
+                errorMessage.classList.remove("danger_hidden");
+                errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
+            }
+        }
+        catch(e){
+    
+        }
+    }else{
+        errorMessage.classList.remove("danger_hidden")
+        errorInfo.innerHTML = `<p>Plese enter a title<p>`
     }
 
 }

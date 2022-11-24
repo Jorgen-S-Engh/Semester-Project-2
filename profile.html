@@ -41,11 +41,15 @@
                 <button type="button" class="btn-close new-listing-modal__btn-close" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
+            <div class="alert alert-danger danger_hidden" role="alert">
+                <p>Something went wrong: </p>
+                <p class="create_account_error"></p>
+            </div>
 
             <form action="" class="text-center">
                 <div>
                     <label class="form-label">Title</label>
-                    <input type="text" class="form-control CE-title" placeholder="Required" />
+                    <input type="text" class="form-control CE-title CE-title-red" placeholder="Required" />
                 </div>
                 <div>
                     <label class="form-label">Tags</label>
@@ -67,38 +71,6 @@
             <button class="btn btn-primary new-listing-modal__btn m-3">Create Listing</button>
         </div>
     </div>
-
-
-
-
-    <!-- <div class="modal-container">
-        <div class="modal_no_show" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Change profile picture or banner</h5>
-                        <button type="button" class="close btn-close close_modal">
-                        </button>
-                    </div>
-                    <div class="modal-body d-flex flex-column">
-                        <input type="text" class="change_profile_pic my-3" placeholder="URL to new profile picture">
-                        <input type="text" class="change_profile_banner" placeholder="URL to new profile banner">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary change_media">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="container user-listings text-center">
-        <img src="" alt="">
-
-    </div> -->
-
-
-
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item">

@@ -1,5 +1,5 @@
-@import "_profile.scss";
 @import "_variables";
+@import "_profile.scss";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
@@ -79,6 +79,11 @@ h1,
     width: 25px;
     right: 10px;
     top: 25px;
+}
+
+::placeholder {
+    color: red;
+    opacity: 1;
 }
 
 
