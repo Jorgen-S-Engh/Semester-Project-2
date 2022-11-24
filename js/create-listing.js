@@ -30,22 +30,26 @@ console.log(myTagArray)
 
 
 async function createEntry () {
-    const ceTags = document.querySelector(".createEntryTags").value;
+    const ceTags = document.querySelector(".CE-tags").value;
+    const ceMedia = document.querySelector(".CE-media").value;
+    const ceEndDate = document.querySelector(".CE-end-date").value;
+    const ceDesc = document.querySelector(".CE-desc").value;
+    const ceTitle = document.querySelector(".CE-title").value;
+
     const ceTagsArray = ceTags.split(" ")
-    const ceMedia = document.querySelector(".createEntryMedia").value;
     const ceMediaArray = ceMedia.split(" ")
-    const ceEndDate = document.querySelector(".createEntryEndDate").value;
-    const ceDesc = document.querySelector(".createEntryDesc").value;
-    const ceTitle = document.querySelector(".createEntryTitle").value;
+    newDate = new Date(ceEndDate)
+    isoDate = newDate.toISOString();
+
     const entry = {
         title: ceTitle,
         description: ceDesc,
         tags: ceTagsArray,
         media: ceMediaArray,
-        endsAt: ceEndDate,
+        endsAt: isoDate,
     };
 
-    console.log(entry)
+    console.log(isoDate)
     try{
         const reply = await fetch(`${baseUrlCE}/auction/listings`, {
             method: "POST",
