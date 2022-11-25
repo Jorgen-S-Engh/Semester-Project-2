@@ -17,7 +17,7 @@ window.onclick = (e) => {
     }
 };
 
-// ---------------------------------------Modal -------------------------------------
+// ---------------------------------------Create Entry -------------------------------------
 const newListBtn = document.querySelector(".new-listing-modal__btn");
 const errorMessage = document.querySelector(".alert-danger")
 const errorInfo = document.querySelector(".create_account_error")
@@ -31,13 +31,23 @@ async function createEntry () {
     const ceEndDate = document.querySelector(".CE-end-date").value;
     const ceDesc = document.querySelector(".CE-desc").value;
     const ceTitle = document.querySelector(".CE-title").value;
-    console.log("date is" +ceEndDate)
 
     const ceTagsArray = ceTags.split(" ")
     const ceMediaArray = ceMedia.split(" ")
-    newDate = new Date(ceEndDate)
-    isoDate = newDate.toISOString();
-    console.log(isoDate)
+
+    const today = new Date();
+    const todayIso = today.toISOString();
+    let isoDate;
+
+    if (ceEndDate === ""){
+        errorMessage.classList.remove("danger_hidden")
+        errorInfo.innerHTML = `<p>Plese enter a valid date<p>`
+    }
+    else{
+        newDate = new Date(ceEndDate)
+        isoDate = newDate.toISOString();
+
+    }
 
     if (ceMediaArray[0] === ""){
         ceMediaArray.length = 0;
@@ -50,10 +60,19 @@ async function createEntry () {
         media: ceMediaArray,
         endsAt: isoDate,
     };
+    console.log(entry.title === "")
 
-    console.log(entry.title)
+    if(entry.title === ""){
+        errorMessage.classList.remove("danger_hidden")
+        errorInfo.innerHTML = `<p>Plese enter a title<p>`
+    }
 
-    if (entry.title !== ""){
+    if(todayIso > isoDate){
+        errorMessage.classList.remove("danger_hidden")
+        errorInfo.innerHTML = `<p>End date must be in the future<p>`
+    }
+
+    if (entry.title !== "" && todayIso < isoDate){
         try{
             const reply = await fetch(`${baseUrlCE}/auction/listings`, {
                 method: "POST",
@@ -65,6 +84,7 @@ async function createEntry () {
                 body: JSON.stringify(entry),
             });
             const data = await reply.json();
+            console.log(reply)
             console.log(data)
             if (reply.status !== 201){
                 errorMessage.classList.remove("danger_hidden");
@@ -74,9 +94,6 @@ async function createEntry () {
         catch(e){
     
         }
-    }else{
-        errorMessage.classList.remove("danger_hidden")
-        errorInfo.innerHTML = `<p>Plese enter a title<p>`
     }
 
 }
