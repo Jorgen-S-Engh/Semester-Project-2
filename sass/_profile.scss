@@ -55,6 +55,22 @@
     resize: none;
 }
 
+.user-listings {
+    background-color: $white;
+
+    &.__item{
+        background-color: $primary;
+    }
+}
+
+.user-listings__item{
+    background-color: $primary;
+    color:$white;
+    width: 80%;
+    
+}
+
+
 //Spør Eivind hvorfor dette ikke funker. 
 ::placeholder {
     color: red;

@@ -19,9 +19,10 @@ window.onclick = (e) => {
 
 // ---------------------------------------Create Entry -------------------------------------
 const newListBtn = document.querySelector(".new-listing-modal__btn");
-const errorMessage = document.querySelector(".alert-danger")
-const errorInfo = document.querySelector(".create_account_error")
-const baseUrlCE = "https://api.noroff.dev/api/v1"
+const errorMessage = document.querySelector(".alert-danger");
+const errorInfo = document.querySelector(".create_account_error");
+const successMessage = document.querySelector(".success_hidden");
+const baseUrlCE = "https://api.noroff.dev/api/v1";
 
 newListBtn.addEventListener("click", createEntry);
 
@@ -32,15 +33,15 @@ async function createEntry () {
     const ceDesc = document.querySelector(".CE-desc").value;
     const ceTitle = document.querySelector(".CE-title").value;
 
-    const ceTagsArray = ceTags.split(" ")
-    const ceMediaArray = ceMedia.split(" ")
+    const ceTagsArray = ceTags.split(" ");
+    const ceMediaArray = ceMedia.split(" ");
 
     const today = new Date();
     const todayIso = today.toISOString();
     let isoDate;
 
     if (ceEndDate === ""){
-        errorMessage.classList.remove("danger_hidden")
+        errorMessage.classList.remove("danger_hidden");
         errorInfo.innerHTML = `<p>Plese enter a valid date<p>`
     }
     else{
@@ -89,6 +90,12 @@ async function createEntry () {
             if (reply.status !== 201){
                 errorMessage.classList.remove("danger_hidden");
                 errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
+            }else{
+                errorMessage.classList.add("danger_hidden");
+                successMessage.classList.remove("success_hidden");
+                setTimeout(() => {
+                    modal.classList.add("modal-hidden")
+                  }, "2000")
             }
         }
         catch(e){

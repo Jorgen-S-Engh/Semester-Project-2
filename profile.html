@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/profile.mjs"></script>
     <script defer src="js/create-listing.js"></script>
+    <script defer src="js/user-listing.js"></script>
+    
+
     <title>Profile</title>
 </head>
 
@@ -41,6 +44,9 @@
                 <button type="button" class="btn-close new-listing-modal__btn-close" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
+            <div class="alert alert-success success_hidden alert-success-CE text-center" role="alert">
+                <h4>New Listing Created!</h4>
+            </div>
             <div class="alert alert-danger danger_hidden" role="alert">
                 <p>Something went wrong: </p>
                 <p class="create_account_error"></p>
@@ -70,6 +76,14 @@
             <button class="btn btn-primary new-listing-modal__btn m-3">Create Listing</button>
         </div>
     </div>
+    <div class="container user-listings">
+        <h2 class="user-listings__headline text-center"></h2>
+        <div class="container user-listings__container d-flex flex-column align-items-center">
+            
+        </div>
+    </div>
+
+
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item">
