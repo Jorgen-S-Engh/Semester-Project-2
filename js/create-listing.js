@@ -61,7 +61,6 @@ async function createEntry () {
         media: ceMediaArray,
         endsAt: isoDate,
     };
-    console.log(entry.title === "")
 
     if(entry.title === ""){
         errorMessage.classList.remove("danger_hidden")

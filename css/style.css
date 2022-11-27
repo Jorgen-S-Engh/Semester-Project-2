@@ -10865,6 +10865,11 @@ textarea.form-control-lg {
   color: red;
 }
 
+.listing__item-container {
+  width: 80%;
+  background-color: #F9F9F9;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

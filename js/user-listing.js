@@ -32,14 +32,10 @@ async function getUserListings (){
 
 getUserListings();
 
-const deleteEntry = document.querySelector(".btn-delete-listing");
+// const deleteEntry = document.querySelector(".btn-delete-listing");
 
-deleteEntry.addEventListener("click", () =>{
-    console.log("click")
-})
+// deleteEntry.addEventListener("click", () =>{
+//     console.log("click")
+// })
 
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id")
-console.log(id)
-console.log(params)
+
