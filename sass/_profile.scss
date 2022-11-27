@@ -67,9 +67,11 @@
     background-color: $primary;
     color:$white;
     width: 80%;
-    
 }
 
+.btn-delete-listing{
+    color:red;
+}
 
 //Spør Eivind hvorfor dette ikke funker. 
 ::placeholder {

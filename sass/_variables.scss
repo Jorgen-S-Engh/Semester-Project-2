@@ -1,6 +1,18 @@
 $primary: #323859;
-$secondary: #F25C05;
+$secondary: #323859;
+
 $info: #F2C0A2;
 $white: #F9F9F9;
 $gold: #D9A384;
+// $gold: #f7ba97;
 // $danger: #F20505;
+
+.btn-secondary{
+    background-color: #323859 !important;
+    border: solid 2px $gold !important;
+}
+
+.btn-secondary:hover{
+    border: solid 2px #f7ba97 !important;
+
+}

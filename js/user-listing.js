@@ -20,7 +20,7 @@ async function getUserListings (){
                                         `<div class="user-listings__item text-center m-3 p-3 rounded">
                                             <h3>${data[i].title}</h3>
                                             <p>${data[i].description}</p>
-                                            <button class="btn btn-primary btn-delete-listing">Delete Listing</button>
+                                            <button class="btn btn-secondary btn-delete-listing">Delete Listing</button>
                                         </div>
                                         `
         }
@@ -31,3 +31,15 @@ async function getUserListings (){
 }
 
 getUserListings();
+
+const deleteEntry = document.querySelector(".btn-delete-listing");
+
+deleteEntry.addEventListener("click", () =>{
+    console.log("click")
+})
+
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id")
+console.log(id)
+console.log(params)
