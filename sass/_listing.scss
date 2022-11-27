@@ -1,6 +1,22 @@
 
 .listing__item-container{
     width:80%;
-    background-color: $white;
+    background-color: $primary;
+}
+.listing__item-container *{
+    color: $white;
+
+}
+
+.user-listings__img-container{
+    max-height: 400px;
+    max-width: 400px;
+    object-fit: contain;
+}
+
+.user-listings__img-container img{
+    object-fit: contain;
+    height:100%;
+    width:100%;
 }
 

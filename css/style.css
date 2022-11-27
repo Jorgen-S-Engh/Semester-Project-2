@@ -10867,7 +10867,23 @@ textarea.form-control-lg {
 
 .listing__item-container {
   width: 80%;
-  background-color: #F9F9F9;
+  background-color: #323859;
+}
+
+.listing__item-container * {
+  color: #F9F9F9;
+}
+
+.user-listings__img-container {
+  max-height: 400px;
+  max-width: 400px;
+  object-fit: contain;
+}
+
+.user-listings__img-container img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
 }
 
 /*!
