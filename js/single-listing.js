@@ -50,14 +50,12 @@ async function getSingleListing(){
                 
             }
             highestBid.innerHTML = `<strong>${Math.max(...bids)}</strong>`
-    
             
         }else{
             bidContainer.innerHTML = `
             <p class="text-center">Be the first one to bid on this item!</p>
             `
             highestBid.innerHTML = `0`
-
         }
 
     }
