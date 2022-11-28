@@ -20,3 +20,14 @@
     width:100%;
 }
 
+.user-listings__bid-container{
+    background-color: $primary;
+    width:75%;
+}
+.user-listings__bid-container *{
+    color:$white;
+
+}
+.user-listings__bidder-info{
+    border: 1px solid $gold;
+}

@@ -16,7 +16,7 @@ async function getListings () {
             listingContainer.innerHTML += 
                                             `
                                         <a href="product.html?id=${data[i].id}" class="my-3">
-                                            <div class="d-flex justify-content-center listing__item-container my-3 rounded">
+                                            <div class="d-flex justify-content-center my-3 rounded">
                                                 <div class="card d-flex flex-column align-items-center">
                                                     <img src="img/new-product.png" class="card-img-top item-img mt-3" alt="...">
                                                     <div class="card-body d-flex flex-column align-items-center">
