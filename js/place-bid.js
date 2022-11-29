@@ -15,7 +15,6 @@ placeBidBtn.addEventListener("click", placeBid)
 async function placeBid(e) {
     e.preventDefault();
     const bidAmount = document.querySelector(".bid-amount").value;
-    // const bidNumber = Number(bidAmount)
     const bid = {amount: Number(bidAmount)}
    
     const options = {
