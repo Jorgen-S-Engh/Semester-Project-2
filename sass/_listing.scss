@@ -43,6 +43,6 @@
 }
 
 //why no work?
-.place-bid-hidden{
-    display:hidden;
+.place-bid-success-hidden, .place-bid-error-hidden{
+    display:none;
 }
