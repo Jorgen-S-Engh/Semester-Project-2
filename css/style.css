@@ -10844,19 +10844,12 @@ textarea.form-control-lg {
   color: red;
 }
 
-::placeholder {
-  color: red;
-  opacity: 1;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: red;
+.user-listings_container {
+  background-color: #F9F9F9;
 }
 
 .listing__item-container {
   width: 80%;
-  background-color: #323859;
 }
 
 .listing__item-container * {
@@ -10882,6 +10875,10 @@ textarea.form-control-lg {
 
 .user-listings__bid-container * {
   color: #F9F9F9;
+}
+
+.user-listings__make-bid {
+  background-color: #F9F9F9;
 }
 
 .user-listings__bidder-info {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/single-listing.js"></script>
+    <script type="module" src="js/place-bid.js"></script>
     <title>Product</title>
 </head>
 
@@ -23,7 +24,7 @@
             </li>
         </ul>
     </nav>
-    <div class="container">
+    <div class="container user-listings_container rounded my-3">
         <div class="container user-listings rounded d-flex flex-column align-items-center">
             <h2 class="user-listings__headline text-center "></h2>
             <div class="container user-listings__container d-flex flex-column align-items-center">
@@ -36,7 +37,11 @@
                 
             </div>
         </div>
-
+        <div class="user-listings__make-bid container text-center p-3">
+            <form action="" class="d-flex flex-column align-items-center">
+                <input type="number" class="rounded form-control w-75 bid-amount" placeholder="Your amount">
+                <button class="btn btn-primary m-3 w-50 place-bid-btn">Place Bid</button>
+            </form>
         </div>
     </div>
     <a href="feed.html">Back to auction</a>

@@ -11,10 +11,7 @@ async function getSingleListing(){
     try{
         const reply = await fetch(`${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`)
         const data = await reply.json();
-        console.log(data)
-        
-
-
+ 
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
                                             <h3>${data.title}</h3>
@@ -30,15 +27,11 @@ async function getSingleListing(){
                                         </div>
                                         `
         
-        
-
-
 
         if(data.bids.length > 0){
             const bids =[];
             for (let i = 0; i < data.bids.length; i++){
                 bids.push(data.bids[i].amount)
-                console.log(data.bids[i].amount)
 
                 bidContainer.innerHTML += `
                 <div class="p-4 m-2 rounded user-listings__bidder-info">
@@ -46,8 +39,7 @@ async function getSingleListing(){
                     <p>Amount: ${data.bids[i].amount}</p>
                 </div>
                 
-                `
-                
+                ` 
             }
             highestBid.innerHTML = `<strong>${Math.max(...bids)}</strong>`
             

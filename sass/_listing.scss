@@ -1,7 +1,10 @@
+.user-listings_container{
+    background-color: $white;
+}
 
 .listing__item-container{
     width:80%;
-    background-color: $primary;
+    // background-color: $primary;
 }
 .listing__item-container *{
     color: $white;
@@ -26,8 +29,12 @@
 }
 .user-listings__bid-container *{
     color:$white;
-
 }
+
+.user-listings__make-bid{
+    background-color: $white;
+}
+
 .user-listings__bidder-info{
     border: 1px solid $gold;
 }
