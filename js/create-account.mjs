@@ -20,13 +20,13 @@ async function createAccount (e){
         avatar: loginAvatar,
         
     };
-    const apiData = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-          },
-        body : JSON.stringify(user)
-    }
+    // const apiData = {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     body : JSON.stringify(user)
+    // }
     try{
         const response = await fetch(`${baseUrl}${endpoint}`, {
             method:"POST",

@@ -38,3 +38,11 @@
 .user-listings__bidder-info{
     border: 1px solid $gold;
 }
+.user-listings__bid-container{
+    max-height: 500px;
+}
+
+//why no work?
+.place-bid-hidden{
+    display:hidden;
+}

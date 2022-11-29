@@ -10885,6 +10885,14 @@ textarea.form-control-lg {
   border: 1px solid #D9A384;
 }
 
+.user-listings__bid-container {
+  max-height: 500px;
+}
+
+.place-bid-hidden {
+  display: hidden;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

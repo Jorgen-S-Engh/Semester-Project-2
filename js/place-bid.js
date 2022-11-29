@@ -9,34 +9,27 @@ const id = params.get("id")
 
 placeBidBtn.addEventListener("click", placeBid)
 
-
-
-
-async function placeBid(e) {
+async function placeBid(e){
     e.preventDefault();
     const bidAmount = document.querySelector(".bid-amount").value;
     const bid = {amount: Number(bidAmount)}
-   
     const options = {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
-        body : JSON.stringify(bid)
+        body: JSON.stringify(bid)
     }
-    console.log(options)
-
     try{
-        const reply = await fetch(`${baseUrl}/auction/listings/${id}/bids`, options);
-        console.log(`${baseUrl}/auction/listings/${id}/bids`)
-
-        const data = await reply.json();
-        console.log(data)
+        const response = await fetch(`${baseUrl}/auction/listings/${id}/bids`,options )
+        const data = await response.json();
         
-        
-
-    }
-    catch(e){
-
+    }catch(e){
+        console.log()
     }
 }
+
+
+
+

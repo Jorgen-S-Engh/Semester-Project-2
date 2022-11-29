@@ -32,8 +32,9 @@
             </div>
             <h4>Highest bid:</h4>
             <span class="highest-bid m-3"></span>
-            <div class="user-listings__bid-container d-flex flex-column align-items-center p-3 rounded">
-                <h4>Bids:</h4>
+            <h4>Bid History</h4>
+            <div class="user-listings__bid-container d-flex flex-column align-items-center p-3 rounded overflow-auto mh-25">
+                
                 
             </div>
         </div>
@@ -43,6 +44,15 @@
                 <button class="btn btn-primary m-3 w-50 place-bid-btn">Place Bid</button>
             </form>
         </div>
+        <div class="alert alert-success text-center place-bid-success place-bid-hidden" role="alert">
+            <h4>Success!</h4>
+            <h5>Bid placed on item</h5>
+        </div>
+        <div class="alert alert-danger text-center place-bid-error place-bid-error-hidden" role="alert">
+            <p>Something went wrong: </p>
+            <p class="create_account_error"></p>
+        </div>
+
     </div>
     <a href="feed.html">Back to auction</a>
     <footer class="py-3 my-4">
