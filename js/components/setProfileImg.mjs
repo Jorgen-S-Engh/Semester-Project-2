@@ -6,5 +6,4 @@ export function setImg () {
         profileImg.src = "img/user-profile.png"
     } 
 }
-
 setImg();
