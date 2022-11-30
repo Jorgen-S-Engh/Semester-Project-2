@@ -1,4 +1,6 @@
 import { baseUrl } from "./components/baseUrl.mjs";
+import { setImg } from "./components/setProfileImg.mjs";
+
 const btnChangeAvatar = document.querySelector(".btn-change-avatar");
 const inputMedia = document.querySelector(".CA-media").value;
 
@@ -22,10 +24,10 @@ async function changeMedia (e){
             body: JSON.stringify(avatar)
         })
         const data = await response.json();
-        localStorage.removeItem("avatar");
-        localStorage.setItem("avatar",inputMedia);
         
-
+        localStorage.setItem("avatar", "");
+        setImg();
+        
         location.reload();
         console.log(response)
         console.log(data)
