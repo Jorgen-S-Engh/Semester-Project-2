@@ -1,7 +1,7 @@
 import { baseUrl } from "./components/baseUrl.mjs";
 const endpoint = "/auction/auth/register"
 const createAccountBtn = document.querySelector(".create_acc_btn")
-const successMessage = document.querySelector(".alert-success")
+const successMessage = document.querySelector(".alert-success-createAC")
 const errorMessage = document.querySelector(".alert-danger")
 const errorInfo = document.querySelector(".create_account_error")
 
@@ -20,13 +20,6 @@ async function createAccount (e){
         avatar: loginAvatar,
         
     };
-    // const apiData = {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     body : JSON.stringify(user)
-    // }
     try{
         const response = await fetch(`${baseUrl}${endpoint}`, {
             method:"POST",
@@ -37,8 +30,8 @@ async function createAccount (e){
         })
         const data = await response.json();
         if (response.status === 200 || response.status === 201){
-            successMessage.classList.remove("success_hidden")
-            errorMessage.classList.add("danger_hidden")
+            successMessage.classList.remove("alert-success-createAC")
+            errorMessage.classList.add("danger-hidden-createAC")
             localStorage.clear()
             localStorage.setItem("password",loginPassword);
             localStorage.setItem("email", loginEmail);
@@ -47,7 +40,7 @@ async function createAccount (e){
               }, "2000")
             
         }else{
-            errorMessage.classList.remove("danger_hidden")
+            errorMessage.classList.remove("danger-hidden-createAC")
             errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
 
 

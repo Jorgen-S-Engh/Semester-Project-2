@@ -36,8 +36,10 @@ async function placeBid(e){
                 location.reload();
             }, "2000")
 
-            
+        }else{
+            bidError.classList.remove("place-bid-error-hidden")
 
+            bidErrorMessage.innerHTML = `<p>${data.errors[0].message}</p>`
 
         }
         console.log(response)
@@ -46,7 +48,7 @@ async function placeBid(e){
 
         
     }catch(e){
-        console.log()
+
     }
 }
 

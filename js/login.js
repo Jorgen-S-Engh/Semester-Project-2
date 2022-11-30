@@ -37,7 +37,7 @@ loginBtn.addEventListener("click", (e) => {
         localStorage.setItem("credits", data.credits);
         window.location.href = "feed.html";
       }else{
-        errorMessage.classList.remove("danger_hidden")
+        errorMessage.classList.remove("danger_hidden-login")
         errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
       }
 
