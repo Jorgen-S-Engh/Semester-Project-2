@@ -8,11 +8,23 @@ $gold: #D9A384;
 // $danger: #F20505;
 
 .btn-secondary{
-    background-color: rgba(50,56,89, 1) !important;
+    background-color: $primary !important;
     border: solid 2px $gold !important;
 }
 
 .btn-secondary:hover{
     border: solid 2px #f7ba97 !important;
 }
+
+.btn-info{
+    background-color: $white !important;
+    border: solid 2px $primary !important;
+    // border: solid 2px #D9A384 !important;
+}
+
+.btn-info:hover{
+    // border: solid 2px $primary !important;
+    border: solid 2px $gold !important;
+}
+
 

@@ -1,20 +1,38 @@
 @charset "UTF-8";
 .btn-secondary {
-  background-color: rgb(50, 56, 89) !important;
+  background-color: #323859 !important;
   border: solid 2px #D9A384 !important;
 }
 
 .btn-secondary:hover {
   border: solid 2px #f7ba97 !important;
+}
+
+.btn-info {
+  background-color: #F9F9F9 !important;
+  border: solid 2px #323859 !important;
+}
+
+.btn-info:hover {
+  border: solid 2px #D9A384 !important;
 }
 
 .btn-secondary {
-  background-color: rgb(50, 56, 89) !important;
+  background-color: #323859 !important;
   border: solid 2px #D9A384 !important;
 }
 
 .btn-secondary:hover {
   border: solid 2px #f7ba97 !important;
+}
+
+.btn-info {
+  background-color: #F9F9F9 !important;
+  border: solid 2px #323859 !important;
+}
+
+.btn-info:hover {
+  border: solid 2px #D9A384 !important;
 }
 
 /*!

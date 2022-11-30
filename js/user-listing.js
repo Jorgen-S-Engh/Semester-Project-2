@@ -31,18 +31,3 @@ async function getUserListings (){
 }
 
 getUserListings();
-
-// const deleteEntry = document.querySelector(".btn-delete-listing");
-
-// deleteEntry.addEventListener("click", () =>{
-//     console.log("click")
-// })
-
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
-
-
