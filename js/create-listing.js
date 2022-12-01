@@ -21,7 +21,7 @@ window.onclick = (e) => {
 const newListBtn = document.querySelector(".new-listing-modal__btn");
 const errorMessage = document.querySelector(".alert-danger");
 const errorInfo = document.querySelector(".create_account_error");
-const successMessage = document.querySelector(".success_hidden");
+const successMessage = document.querySelector(".success_hidden-CE");
 const baseUrlCE = "https://api.noroff.dev/api/v1";
 
 newListBtn.addEventListener("click", createEntry);
@@ -41,7 +41,7 @@ async function createEntry () {
     let isoDate;
 
     if (ceEndDate === ""){
-        errorMessage.classList.remove("danger_hidden");
+        errorMessage.classList.remove("danger_hidden-CE");
         errorInfo.innerHTML = `<p>Plese enter a valid date<p>`
     }
     else{
@@ -63,12 +63,13 @@ async function createEntry () {
     };
 
     if(entry.title === ""){
-        errorMessage.classList.remove("danger_hidden")
-        errorInfo.innerHTML = `<p>Plese enter a title<p>`
+        console.log("title not present")
+        errorMessage.classList.remove("danger_hidden-CE")
+        errorInfo.innerHTML = `Plese enter a title`
     }
 
     if(todayIso > isoDate){
-        errorMessage.classList.remove("danger_hidden")
+        errorMessage.classList.remove("danger_hidden-CE")
         errorInfo.innerHTML = `<p>End date must be in the future<p>`
     }
 
@@ -87,11 +88,11 @@ async function createEntry () {
             console.log(reply)
             console.log(data)
             if (reply.status !== 201){
-                errorMessage.classList.remove("danger_hidden");
+                errorMessage.classList.remove("danger_hidden-CE");
                 errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
             }else{
-                errorMessage.classList.add("danger_hidden");
-                successMessage.classList.remove("success_hidden");
+                errorMessage.classList.add("danger_hidden-CE");
+                successMessage.classList.remove("success_hidden-CE");
                 setTimeout(() => {
                     modal.classList.add("modal-hidden")
                   }, "2000")

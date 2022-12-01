@@ -1,20 +1,19 @@
 import { baseUrl } from "./components/baseUrl.mjs";
-import { setImg } from "./components/setProfileImg.mjs";
 
 const btnChangeAvatar = document.querySelector(".btn-change-avatar");
 const inputMedia = document.querySelector(".CA-media");
 const profileImg = document.querySelector(".profile-user-image");
+const changeAvatarHidden = document.querySelector(".change-avatar-danger_hidden");
+const changeAvatarmessage = document.querySelector(".change-avatar-error");
 
 btnChangeAvatar.addEventListener("click", changeMedia);
 
 async function changeMedia (e){
     e.preventDefault();
     
-
     const avatar = {
         avatar: inputMedia.value,
     };
-    console.log(inputMedia);
 
     try{
         const response = await fetch(`${baseUrl}/auction/profiles/${localStorage.getItem("name")}/media`, {
@@ -30,15 +29,17 @@ async function changeMedia (e){
         console.log(response)
         console.log(data)
 
-    }catch(e){
-        console.log(e)
-    }
-    finally{
-        // localStorage.removeItem('avatar');
-        localStorage.setItem("avatar", inputMedia.value);
-        profileImg.src = inputMedia.value;
-        inputMedia.value = "";
-        location.reload();
+        if(response.status === 200){
+            localStorage.setItem("avatar", inputMedia.value);
+            profileImg.src = inputMedia.value;
+            inputMedia.value = "";
+            location.reload();
+        }else{
+            changeAvatarHidden.classList.remove("change-avatar-danger_hidden");
+            changeAvatarmessage.innerHTML = `${data.errors[0].message}`
+        }
 
+    }catch(e){
+        
     }
 }

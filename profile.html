@@ -39,8 +39,12 @@
         <div class="modal-body">
             <div>
                 <label class="form-label">Media URL</label>
-                <input type="text" class="form-control CA-media" value=""/>
+                <input type="text" class="form-control CA-media" placeholder="Required" value=""/>
             </div>
+        </div>
+        <div class="alert alert-danger text-center change-avatar-error change-avatar-danger_hidden" role="alert">
+            <p>Something went wrong: </p>
+            <p class="create_account_error"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
@@ -49,8 +53,8 @@
       </div>
     </div>
   </div>
-
-    <div class="container text-center m-3">
+  <div class="container profile-container d-flex flex-column align-items-center">
+    <div class="container text-center mt-3">
         <img class="profile-user-image" src="" alt="Profile image">
     </div><div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -71,7 +75,7 @@
     </div>
   </div>
 </div>
-    <div class="profile-info-container d-flex flex-column align-items-center">
+    <div class="profile-info-container d-flex flex-column align-items-center w-75">
         <div class="container user-info text-center mt-4">
         </div>
         
@@ -84,7 +88,6 @@
                 Change avatar
             </button>
         </div>
-
     </div>
     <div class="modal-background modal-hidden">
         <div class="new-listing-modal text-center">
@@ -93,10 +96,10 @@
                 <button type="button" class="btn-close new-listing-modal__btn-close" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
-            <div class="alert alert-success success_hidden alert-success-CE text-center" role="alert">
+            <div class="alert alert-success success_hidden-CE alert-success-CE text-center" role="alert">
                 <h4>New Listing Created!</h4>
             </div>
-            <div class="alert alert-danger danger_hidden" role="alert">
+            <div class="alert alert-danger danger_hidden-CE" role="alert">
                 <p>Something went wrong: </p>
                 <p class="create_account_error"></p>
             </div>
@@ -125,12 +128,13 @@
             <button class="btn btn-primary new-listing-modal__btn m-3">Create Listing</button>
         </div>
     </div>
-    <div class="container user-listings">
+    <div class="container user-listings rounded">
         <h2 class="user-listings__headline text-center"></h2>
         <div class="container user-listings__container d-flex flex-column align-items-center">
-            <button class="btn btn-secondary btn-delete-listing">Delete Listing</button>
+            
         </div>
     </div>
+  </div>
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item">

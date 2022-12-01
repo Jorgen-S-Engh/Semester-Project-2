@@ -10806,8 +10806,8 @@ textarea.form-control-lg {
   }
 }
 .profile-user-image {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: solid 2px white;
   object-fit: cover;
@@ -10871,6 +10871,10 @@ textarea.form-control-lg {
 
 .btn-delete-listing {
   color: red;
+}
+
+.change-avatar-danger_hidden, .success_hidden-CE, .danger_hidden-CE {
+  display: none;
 }
 
 .user-listings_container {

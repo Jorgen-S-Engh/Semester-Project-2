@@ -2,8 +2,8 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 .profile-user-image {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: solid 2px white;
     object-fit: cover;
@@ -26,8 +26,6 @@
 .profile-info-container * {
     color: $primary;
 }
-
-
 
 .new-listing-modal {
 
@@ -72,6 +70,12 @@
 .btn-delete-listing{
     color:red;
 }
+
+.change-avatar-danger_hidden, .success_hidden-CE, .danger_hidden-CE{
+    display:none;
+}
+
+
 
 //Spør Eivind hvorfor dette ikke funker. 
 // ::placeholder {

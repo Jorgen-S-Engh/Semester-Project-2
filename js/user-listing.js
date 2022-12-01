@@ -31,3 +31,5 @@ async function getUserListings (){
 }
 
 getUserListings();
+
+// Legger på en eventlistner på containeren som den skal ligge inn i. Sjekker at event.target er korrekt => gjør det man ønsker. 
