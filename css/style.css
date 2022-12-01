@@ -10877,6 +10877,10 @@ textarea.form-control-lg {
   display: none;
 }
 
+.house-logo {
+  width: 30px;
+}
+
 .user-listings_container {
   background-color: #F9F9F9;
 }
@@ -10924,6 +10928,30 @@ textarea.form-control-lg {
 
 .place-bid-success-hidden, .place-bid-error-hidden {
   display: none;
+}
+
+.profile-img-small {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 2px white;
+  object-fit: cover;
+  transition: border 300ms ease-out;
+}
+
+.header-name-container * {
+  color: #F9F9F9;
+}
+
+.item-img {
+  object-fit: contain;
+  height: 200px;
+  width: 200px;
+}
+
+.btn-logout {
+  position: absolute;
+  right: 30px;
 }
 
 /*!
@@ -21715,65 +21743,4 @@ h1, .h1,
 
 .danger-hidden-createAC, .danger_hidden-login {
   display: none;
-}
-
-.profile-img-small {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: solid 2px white;
-  object-fit: cover;
-  transition: border 300ms ease-out;
-}
-
-.header-name-container * {
-  color: #F9F9F9;
-}
-
-.item-img {
-  object-fit: contain;
-  height: 200px;
-  width: 200px;
-}
-
-.hamburger-container {
-  height: 100%;
-  width: 200px;
-  background-color: red;
-  top: 0px;
-  right: 0px;
-  z-index: 5;
-}
-
-.hamburger-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin-top: 40px;
-}
-
-.hamburger-menu * {
-  margin: 10px 0px;
-}
-
-.close-hamburger {
-  position: absolute;
-  right: 10px;
-  top: 0px;
-}
-
-.close-hamburger-container {
-  display: none;
-}
-
-.hamburger-icon {
-  width: 25px;
-  right: 10px;
-  top: 25px;
-}
-
-.btn-logout {
-  position: absolute;
-  right: 30px;
 }/*# sourceMappingURL=style.css.map */

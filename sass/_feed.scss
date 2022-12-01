@@ -1,0 +1,24 @@
+.profile-img-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 2px white;
+    object-fit: cover;
+    transition: border 300ms ease-out;
+}
+
+.header-name-container * {
+    color: $white;
+}
+
+.item-img {
+    object-fit: contain;
+    height: 200px;
+    width: 200px;
+}
+
+
+.btn-logout{
+    position:absolute;
+    right:30px;
+}
