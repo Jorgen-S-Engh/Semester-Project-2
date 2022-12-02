@@ -1,8 +1,8 @@
 import { baseUrl } from "./components/baseUrl.mjs";
 const endpoint = "/auction/auth/register"
 const createAccountBtn = document.querySelector(".create_acc_btn")
-const successMessage = document.querySelector(".alert-success-createAC")
-const errorMessage = document.querySelector(".alert-danger")
+const successMessage = document.querySelector(".alert-success-CA")
+const errorMessage = document.querySelector(".alert-danger-CA")
 const errorInfo = document.querySelector(".create_account_error")
 
 createAccountBtn.addEventListener("click", createAccount)
@@ -30,8 +30,8 @@ async function createAccount (e){
         })
         const data = await response.json();
         if (response.status === 200 || response.status === 201){
-            successMessage.classList.remove("alert-success-createAC")
-            errorMessage.classList.add("danger-hidden-createAC")
+            successMessage.classList.remove("alert-success-hidden")
+            errorMessage.classList.add("alert-danger-hidden")
             localStorage.clear()
             localStorage.setItem("password",loginPassword);
             localStorage.setItem("email", loginEmail);
@@ -40,7 +40,7 @@ async function createAccount (e){
               }, "2000")
             
         }else{
-            errorMessage.classList.remove("danger-hidden-createAC")
+            errorMessage.classList.remove("alert-danger-hidden")
             errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
 
 

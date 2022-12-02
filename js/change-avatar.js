@@ -3,7 +3,6 @@ import { baseUrl } from "./components/baseUrl.mjs";
 const btnChangeAvatar = document.querySelector(".btn-change-avatar");
 const inputMedia = document.querySelector(".CA-media");
 const profileImg = document.querySelector(".profile-user-image");
-const changeAvatarHidden = document.querySelector(".change-avatar-danger_hidden");
 const changeAvatarmessage = document.querySelector(".change-avatar-error");
 
 btnChangeAvatar.addEventListener("click", changeMedia);
@@ -35,7 +34,7 @@ async function changeMedia (e){
             inputMedia.value = "";
             location.reload();
         }else{
-            changeAvatarHidden.classList.remove("change-avatar-danger_hidden");
+            changeAvatarmessage.classList.remove("alert-danger-hidden");
             changeAvatarmessage.innerHTML = `${data.errors[0].message}`
         }
 
