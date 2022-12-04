@@ -15,19 +15,18 @@ async function getListings () {
 
             listingContainer.innerHTML += 
                                             `
-                                        <a href="product.html?id=${data[i].id}" class="my-3">
-                                            <div class="d-flex justify-content-center my-3 rounded">
-                                                <div class="card d-flex flex-column align-items-center">
-                                                    <img src="img/new-product.png" class="card-img-top item-img mt-3" alt="...">
-                                                    <div class="card-body d-flex flex-column align-items-center">
-                                                        <h5 class="card-title">${data[i].title}</h5>
-                                                        <p class="card-text text-center">${data[i].description}</p>
-                                                        <a href="#" class="btn btn-primary">Make a bid</a>
-
-                                                    </div>
-                                                </div>
+                                        <div class="col-sm-12 col-md-4 col-lg-3 item-container-test rounded m-3 p-3">
+                                        <a href="product.html?id=${data[i].id}">
+                                            <div class="card-container d-flex flex-column align-items-center justify-content-center text-center">
+                                                <h4>${data[i].title}</h4>
+                                                <img src="${data[i].media}" class="card-img-top item-img mt-3" alt="...">
+                                                <p class="description">${data[i].description}</p>
+                                                <button class="btn btn-primary m-3">Place bid</button>
                                             </div>
                                         </a>
+                                    </div>
+
+
                                         
                                             `
 
