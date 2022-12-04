@@ -4,7 +4,7 @@ import { baseUrl } from "./components/baseUrl.mjs";
 const loginEmail = document.querySelector(".login_email").value = localStorage.getItem("email")
 const loginPassword = document.querySelector(".login_password").value = localStorage.getItem("password")
 const loginBtn = document.querySelector(".login_btn");
-const errorMessage = document.querySelector(".alert-danger")
+const errorMessage = document.querySelector(".alert-danger-hidden-login");
 const errorInfo = document.querySelector(".create_account_error")
 
 
@@ -36,8 +36,9 @@ loginBtn.addEventListener("click", (e) => {
         localStorage.setItem("accessToken", data.accessToken);
         localStorage.setItem("credits", data.credits);
         window.location.href = "feed.html";
+        errorMessage.classList.add("alert-danger-hidden")
       }else{
-        errorMessage.classList.remove("danger_hidden-login")
+        errorMessage.classList.remove("alert-danger-hidden")
         errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
       }
 

@@ -1,27 +1,8 @@
-// ---------------------------------------Modal -------------------------------------
-const btnNewListing = document.querySelector(".btn-new-listing");
-const closeModal = document.querySelector(".new-listing-modal__btn-close")
-const modal = document.querySelector(".modal-background");
-
-btnNewListing.addEventListener("click", () =>{
-    modal.classList.remove("modal-hidden")
-})
-
-closeModal.addEventListener("click", () =>{
-    modal.classList.add("modal-hidden")
-})
-
-window.onclick = (e) => {
-    if (e.target === modal) {
-      modal.classList.add("modal-hidden");
-    }
-};
-
 // ---------------------------------------Create Entry -------------------------------------
 const newListBtn = document.querySelector(".new-listing-modal__btn");
-const errorMessage = document.querySelector(".alert-danger");
-const errorInfo = document.querySelector(".create_account_error");
-const successMessage = document.querySelector(".success_hidden-CE");
+const errorMessage = document.querySelector(".alert-danger-CE");
+const errorInfo = document.querySelector(".create-entry-error");
+const successMessage = document.querySelector(".alert-success-CE");
 const baseUrlCE = "https://api.noroff.dev/api/v1";
 
 newListBtn.addEventListener("click", createEntry);
@@ -41,7 +22,7 @@ async function createEntry () {
     let isoDate;
 
     if (ceEndDate === ""){
-        errorMessage.classList.remove("danger_hidden-CE");
+        errorMessage.classList.remove("alert-danger-hidden");
         errorInfo.innerHTML = `<p>Plese enter a valid date<p>`
     }
     else{
@@ -64,12 +45,12 @@ async function createEntry () {
 
     if(entry.title === ""){
         console.log("title not present")
-        errorMessage.classList.remove("danger_hidden-CE")
+        errorMessage.classList.remove("alert-danger-hidden")
         errorInfo.innerHTML = `Plese enter a title`
     }
 
     if(todayIso > isoDate){
-        errorMessage.classList.remove("danger_hidden-CE")
+        errorMessage.classList.remove("alert-danger-hidden")
         errorInfo.innerHTML = `<p>End date must be in the future<p>`
     }
 
@@ -88,11 +69,11 @@ async function createEntry () {
             console.log(reply)
             console.log(data)
             if (reply.status !== 201){
-                errorMessage.classList.remove("danger_hidden-CE");
+                errorMessage.classList.remove("alert-danger-hidden");
                 errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
             }else{
-                errorMessage.classList.add("danger_hidden-CE");
-                successMessage.classList.remove("success_hidden-CE");
+                errorMessage.classList.add("alert-danger-hidden");
+                successMessage.classList.remove("alert-success-hidden");
                 setTimeout(() => {
                     modal.classList.add("modal-hidden")
                   }, "2000")

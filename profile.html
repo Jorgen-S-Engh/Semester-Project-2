@@ -26,7 +26,7 @@
             </li>
         </ul>
     </nav>
-  <!-- Modal -->
+  <!-- Modal Change Avatar -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -37,12 +37,12 @@
         <div class="modal-body">
             <div>
                 <label class="form-label">Media URL</label>
-                <input type="text" class="form-control CA-media" placeholder="Required" value=""/>
+                <input type="text" class="form-control CA-media" value=""/>
             </div>
         </div>
-        <div class="alert alert-danger text-center change-avatar-error change-avatar-danger_hidden" role="alert">
+        <div class="alert alert-danger alert-danger-hidden text-center change-avatar-error" role="alert">
             <p>Something went wrong: </p>
-            <p class="create_account_error"></p>
+            <p class="create-listing-error"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
@@ -55,7 +55,7 @@
     <div class="container text-center mt-3">
         <img class="profile-user-image" src="" alt="Profile image">
     </div><div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+  <!-- <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Modal title</h5>
@@ -71,14 +71,16 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
     <div class="profile-info-container d-flex flex-column align-items-center w-75">
         <div class="container user-info text-center mt-4">
         </div>
-        
-        <div class="container text-center">
-            <button class="btn btn-primary btn-new-listing">New Listing</button>
+         <!-- Button trigger modal -->
+        <div class="container edit-avatar-btn m-3 d-flex justify-content-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new-listing-modal">
+                New listing
+            </button>
         </div>
         <!-- Button trigger modal -->
         <div class="container edit-avatar-btn m-3 d-flex justify-content-center">
@@ -87,48 +89,62 @@
             </button>
         </div>
     </div>
-    <div class="modal-background modal-hidden">
-        <div class="new-listing-modal text-center">
-            <div class="new-listing-modal__headline d-flex justify-content-between">
-                <h3>New Listing</h3>
-                <button type="button" class="btn-close new-listing-modal__btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+<!-- Modal New Listing -->
+    <div class="modal fade" id="new-listing-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5">Modal title</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="alert alert-success success_hidden-CE alert-success-CE text-center" role="alert">
-                <h4>New Listing Created!</h4>
+            <div class="modal-body">
+                <div>
+                    <div class="alert alert-success alert-success-hidden alert-success-CE text-center" role="alert">
+                        <h4>New Listing Created!</h4>
+                    </div>
+                    <div class="alert alert-danger alert-danger-hidden alert-danger-CE" role="alert">
+                        <p>Something went wrong: </p>
+                        <p class="create-entry-error"></p>
+                    </div>
+                    <form action="" class="text-center">
+                        <div>
+                            <label class="form-label">Title</label>
+                            <input type="text" class="form-control CE-title CE-title-red" placeholder="Required" />
+                        </div>
+                        <div>
+                            <label class="form-label">Tags</label>
+                            <input type="text" class="form-control CE-tags" placeholder="Optional" />
+                        </div>
+                        <div>
+                            <label class="form-label">Media</label>
+                            <input type="text" class="form-control CE-media" placeholder="Optional" />
+                        </div>
+                        <div>
+                            <label class="form-label">End Date</label>
+                            <input type="date" class="form-control CE-end-date" placeholder="Required" />
+                        </div>
+                        <div>
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control CE-desc" rows="3" placeholder="Optional"></textarea>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="alert alert-danger danger_hidden-CE" role="alert">
+            <div class="alert alert-danger alert-danger-hidden text-center change-avatar-error" role="alert">
                 <p>Something went wrong: </p>
-                <p class="create_account_error"></p>
+                <p class="create-listing-error"></p>
             </div>
-            <form action="" class="text-center">
-                <div>
-                    <label class="form-label">Title</label>
-                    <input type="text" class="form-control CE-title CE-title-red" placeholder="Required" />
-                </div>
-                <div>
-                    <label class="form-label">Tags</label>
-                    <input type="text" class="form-control CE-tags" placeholder="Optional" />
-                </div>
-                <div>
-                    <label class="form-label">Media</label>
-                    <input type="text" class="form-control CE-media" placeholder="Optional" />
-                </div>
-                <div>
-                    <label class="form-label">End Date</label>
-                    <input type="date" class="form-control CE-end-date" placeholder="Required" />
-                </div>
-                <div>
-                    <label class="form-label">Description</label>
-                    <textarea class="form-control CE-desc" rows="3" placeholder="Optional"></textarea>
-                </div>
-            </form>
-            <button class="btn btn-primary new-listing-modal__btn m-3">Create Listing</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary btn-change-avatar new-listing-modal__btn">Create Listing</button>
+            </div>
+          </div>
         </div>
     </div>
     <div class="container user-listings rounded">
         <h2 class="user-listings__headline text-center"></h2>
         <div class="container user-listings__container d-flex flex-column align-items-center">
+            <h4>Users listings</h4>
             
         </div>
     </div>
