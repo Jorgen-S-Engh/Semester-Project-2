@@ -10955,6 +10955,27 @@ textarea.form-control-lg {
   color: red;
 }
 
+body {
+  background: linear-gradient(to right, #323859, #1A1826);
+}
+
+nav {
+  border-bottom: 1px solid #D9A384;
+}
+
+h1, .h1,
+.welcome-text {
+  color: #D9A384;
+}
+
+.alert-success-hidden, .alert-danger-hidden {
+  display: none;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -21724,20 +21745,4 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-body {
-  background: linear-gradient(to right, #323859, #1A1826);
-}
-
-nav {
-  border-bottom: 1px solid #D9A384;
-}
-
-h1, .h1,
-.welcome-text {
-  color: #D9A384;
-}
-
-.alert-success-hidden, .alert-danger-hidden {
-  display: none;
 }/*# sourceMappingURL=style.css.map */

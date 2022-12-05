@@ -12,6 +12,12 @@ const id = params.get("id")
 
 placeBidBtn.addEventListener("click", placeBid)
 
+if(localStorage.getItem("name")===null){
+    console.log("no user")
+    placeBidBtn.innerHTML = `Login to place bid`
+    placeBidBtn.disabled = true
+}
+
 async function placeBid(e){
     e.preventDefault();
     const bidAmount = document.querySelector(".bid-amount").value;
@@ -38,14 +44,9 @@ async function placeBid(e){
 
         }else{
             bidError.classList.remove("place-bid-error-hidden")
-
             bidErrorMessage.innerHTML = `<p>${data.errors[0].message}</p>`
 
         }
-        console.log(response)
-        console.log(data);
-
-
         
     }catch(e){
 

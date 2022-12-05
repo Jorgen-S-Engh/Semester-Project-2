@@ -1,6 +1,16 @@
 
-const profileName = document.querySelector(".header-name").innerHTML = `${localStorage.getItem("name")}`
-const profileImg = document.querySelector(".profile-img-small")
+const profileName = document.querySelector(".header-name");
+const profileNameContainer = document.querySelector(".header-name-container");
+const profileImg = document.querySelector(".profile-img-small");
+
+
+if(localStorage.getItem("name")=== null){
+    profileNameContainer.innerHTML = `<p>Welcome</p>`
+}else{
+    profileName.innerHTML = `${localStorage.getItem("name")}`
+}
+
+
 
 function setImg () {
     if (localStorage.getItem("avatar") !== ""){
@@ -15,8 +25,11 @@ setImg();
 // ----------------------- Log out ----------------------
 const btnLogout = document.querySelector(".btn-logout")
 
+if(localStorage.getItem("name") === null){
+    btnLogout.innerHTML = `Log in`
+}
+
 btnLogout.addEventListener("click", () =>{
-    console.log("click")
     localStorage.clear();
     window.location = "index.html";
 })

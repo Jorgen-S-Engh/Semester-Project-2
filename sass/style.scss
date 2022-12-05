@@ -2,25 +2,5 @@
 @import "_profile.scss";
 @import "_listing.scss";
 @import "_feed.scss";
+@import "_global.scss";
 @import "../node_modules/bootstrap/scss/bootstrap";
-
-body {
-    background: linear-gradient(to right, #323859, #1A1826);
-}
-
-nav {
-    border-bottom: 1px solid $gold;
-}
-
-h1,
-.welcome-text {
-    color: #D9A384;
-}
-
-.alert-success-hidden, .alert-danger-hidden  {
-    display: none;
-
-}
-
-
-@media only screen and (min-width: 500px) {}

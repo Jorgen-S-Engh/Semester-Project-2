@@ -1,5 +1,5 @@
 import { baseUrl } from "./components/baseUrl.mjs";
-const listingsContainer = document.querySelector(".user-listings__container")
+const listingsContainer = document.querySelector(".user-listings__container");
 const bidContainer = document.querySelector(".user-listings__bid-container");
 const highestBid = document.querySelector(".highest-bid");
 const queryString = document.location.search;
@@ -27,14 +27,13 @@ async function getSingleListing(){
                                         </div>
                                         `
         
-
         if(data.bids.length > 0){
             const bids =[];
             for (let i = 0; i < data.bids.length; i++){
                 bids.push(data.bids[i].amount)
 
                 bidContainer.innerHTML += `
-                <div class="p-4 m-2 rounded user-listings__bidder-info">
+                <div class="p-2 m-2 rounded user-listings__bidder-info w-100">
                     <p>Bidder: ${data.bids[i].bidderName}</p>
                     <p>Amount: ${data.bids[i].amount}</p>
                 </div>
