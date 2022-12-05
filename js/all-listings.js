@@ -9,10 +9,6 @@ async function getListings () {
         console.log(data);
 
         for (let i = 0; i < data.length; i++){
-            console.log(data[i].id)
-            console.log(data[i].title)
-            console.log(data[i].description)
-
             listingContainer.innerHTML += 
                                             `
                                         <div class="col-sm-12 col-md-4 col-lg-3 item-container-test rounded m-3 p-3">
