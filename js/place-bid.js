@@ -11,10 +11,11 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id")
 
 placeBidBtn.addEventListener("click", placeBid)
+console.log(localStorage.getItem("expired"))
 
-if(localStorage.getItem("name")===null){
-    console.log("no user")
-    placeBidBtn.innerHTML = `Login to place bid`
+if(localStorage.getItem("name")===null) {
+    placeBidBtn.innerHTML = `Log in to bid`
+    // placeBidBtn.innerHTML = `${localStorage.getItem("expired")==="Yes" ? `Item Expired` : `Login to place bid`}`
     placeBidBtn.disabled = true
 }
 

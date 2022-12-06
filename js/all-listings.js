@@ -2,20 +2,19 @@ import { baseUrl } from "./components/baseUrl.mjs";
 
 const listingContainer = document.querySelector(".listing__container");
 
+console.log(1 < 1 ? "Yes" : "No")
+
 async function getListings () {
     try{
         const reply = await fetch(`${baseUrl}/auction/listings`);
         const data = await reply.json();
-        console.log(data);
         const today = new Date();
+        const todayIso = today.toISOString();
+        
         
         for (let i = 0; i < data.length; i++){
-            const newDate = new Date(data[i].endsAt)
-            const isoDate = newDate.toISOString();
-            console.log(newDate)
-            
-            //const name = person ? person.name : "stranger";
-            //condition ? exprIfTrue : exprIfFalse
+            const endDate = new Date(data[i].endsAt)
+            const endDateIso = endDate.toISOString();
 
             listingContainer.innerHTML += 
                                             `
@@ -26,15 +25,13 @@ async function getListings () {
                                                 <img src="${data[i].media}" class="card-img-top item-img mt-3" alt="...">
                                                 <p class="description">${data[i].description}</p>
                                                 <p>Bids: ${data[i]._count.bids}
-                                                <p>${newDate < today ? `<p>Utgått</p>` : `<p>${newDate}</p>`}</p>
-                                                <p>Ends at: ${newDate.toDateString()}</p>
-                                                <button class="btn btn-primary m-3">Place bid</button>
+                                                <p>${endDateIso < todayIso ? `<p>Expired: ${endDate.toDateString()}</p>` : `<p>Ends at: ${endDate.toDateString()}</p>`}</p>
+                                                
+                                                <button class="btn btn-primary m-3" ${endDateIso < todayIso ? `disabled="True"`: ""}>Place bid</button>
                                             </div>
                                         </a>
                                     </div>
 
-
-                                        
                                             `
         }
 

@@ -11,7 +11,11 @@ async function getSingleListing(){
     try{
         const reply = await fetch(`${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`)
         const data = await reply.json();
- 
+        console.log(data)
+        const today = new Date();
+        const endDate = new Date(data.endsAt)
+        today > endDate ? localStorage.setItem("expired", "Yes") : localStorage.setItem("expired", "No");
+
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
                                             <h3>${data.title}</h3>
@@ -22,8 +26,10 @@ async function getSingleListing(){
                                             <p>${data.description}</p>
                                             <p><strong>Seller:</strong></p>
                                             <p>${data.seller.name}</p>
+                                            <p><strong>End date:</strong></p>
+                                            <p>${endDate.toDateString()}
                                             <p><strong>Number of bids:</strong></p>
-                                            <p>${data.bids.length}
+                                            <p>${data.bids.length}</p>
                                         </div>
                                         `
         
@@ -43,9 +49,10 @@ async function getSingleListing(){
             highestBid.innerHTML = `<strong>${Math.max(...bids)}</strong>`
             
         }else{
-            bidContainer.innerHTML = `
-            <p class="text-center">Be the first one to bid on this item!</p>
-            `
+            bidContainer.innerHTML = 
+                                        `
+                                        <p class="text-center">${today.toISOString() > endDate.toISOString() ? `<p>Item expired without bids` : `Be the first one to bid on this item!`}</p>
+                                        `
             highestBid.innerHTML = `0`
         }
 
