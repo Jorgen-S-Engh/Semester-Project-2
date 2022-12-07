@@ -28,6 +28,12 @@
     color:red;
 }
 
-.carousel-control-prev, .carousel-control-next{
+.carousel-control-next-icon, .carousel-control-next{
     color:black;
+}
+
+.slider-images{
+    width: 200px;
+    height:400px;
+    object-fit: contain;
 }

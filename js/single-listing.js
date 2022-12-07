@@ -2,6 +2,7 @@ import { baseUrl } from "./components/baseUrl.mjs";
 const listingsContainer = document.querySelector(".user-listings__container");
 const bidContainer = document.querySelector(".user-listings__bid-container");
 const highestBid = document.querySelector(".highest-bid");
+const caroContainer = document.querySelector(".carousel-container");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id")
@@ -16,12 +17,24 @@ async function getSingleListing(){
         const endDate = new Date(data.endsAt)
         today > endDate ? localStorage.setItem("expired", "Yes") : localStorage.setItem("expired", "No");
 
+        // <div class="user-listings__img-container">
+        //     <img src="${data.media[0]}" alt="" class="rounded">
+        // </div>
+        console.log(data.media)
+
+        for (let i = 0; i < data.media.length; i++){
+            console.log(data.media[i] === 0)
+            caroContainer.innerHTML += 
+                                        `         
+                                        <div class="carousel-item ${data.media[i] === -1 ? `""` : `active`}">
+                                            <img src="${data.media[i]}" class="d-block w-100 slider-images" alt="...">
+                                        </div>
+                                        `
+        }
+
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
-                                            <h3>${data.title}</h3>
-                                            <div class="user-listings__img-container">
-                                                <img src="${data.media}" alt="" class="rounded">
-                                            </div>
+                                            <h3>${data.title}</h3                     
                                             <h4>Description</h4>
                                             <p>${data.description}</p>
                                             <p><strong>Seller:</strong></p>
@@ -39,7 +52,7 @@ async function getSingleListing(){
                 bids.push(data.bids[i].amount)
 
                 bidContainer.innerHTML += `
-                <div class="p-2 m-2 rounded user-listings__bidder-info w-100">
+                <div class="p-2 mb-2 rounded user-listings__bidder-info w-100">
                     <p>Bidder: ${data.bids[i].bidderName}</p>
                     <p>Amount: ${data.bids[i].amount}</p>
                 </div>
