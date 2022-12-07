@@ -26,7 +26,7 @@ async function createEntry () {
         errorInfo.innerHTML = `<p>Plese enter a valid date<p>`
     }
     else{
-        newDate = new Date(ceEndDate)
+        newDate = new Date(ceEndDate);
         isoDate = newDate.toISOString();
 
     }
@@ -46,7 +46,7 @@ async function createEntry () {
     if(entry.title === ""){
         console.log("title not present")
         errorMessage.classList.remove("alert-danger-hidden")
-        errorInfo.innerHTML = `Plese enter a title`
+        errorInfo.innerHTML = `Please enter a title`
     }
 
     if(todayIso > isoDate){
