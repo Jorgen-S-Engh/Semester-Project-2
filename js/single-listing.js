@@ -17,20 +17,29 @@ async function getSingleListing(){
         const endDate = new Date(data.endsAt)
         today > endDate ? localStorage.setItem("expired", "Yes") : localStorage.setItem("expired", "No");
 
-        // <div class="user-listings__img-container">
-        //     <img src="${data.media[0]}" alt="" class="rounded">
-        // </div>
         console.log(data.media)
+        console.log(data.media.length)
 
-        for (let i = 0; i < data.media.length; i++){
+        if(data.media.length === 0){
+            caroContainer.innerHTML = 
+                                        `         
+                                        <div class="carousel-item active">
+                                            <img src="img/new-product.png" class="d-block w-100 slider-images" alt="...">
+                                        </div>
+                                        `
+
+        }else{       
+            for (let i = 0; i < data.media.length; i++){
             console.log(data.media[i] === 0)
             caroContainer.innerHTML += 
                                         `         
-                                        <div class="carousel-item ${data.media[i] === -1 ? `""` : `active`}">
+                                        <div class="carousel-item${i === 0 ? ' active'   : ''}">
                                             <img src="${data.media[i]}" class="d-block w-100 slider-images" alt="...">
                                         </div>
                                         `
-        }
+        }}
+
+
 
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">

@@ -1,12 +1,29 @@
 import { baseUrl } from "./components/baseUrl.mjs";
-
 const listingContainer = document.querySelector(".listing__container");
 
-console.log(1 < 1 ? "Yes" : "No")
+const baseEndPoint = "/auction/listings"
+const endpointDesc ="/auction/listings?sort=created&sortOrder=desc"
+const endpointAsc ="/auction/listings?sort=created&sortOrder=asc"
 
-async function getListings () {
+const btnNewest = document.querySelector(".btn-newest");
+const btnOldest = document.querySelector(".btn-oldest");
+
+btnNewest.addEventListener("click", () => {
+    listingContainer.innerHTML = ""
+    console.log("click")
+    getListings(endpointDesc)
+});
+
+btnOldest.addEventListener("click", () => {
+    listingContainer.innerHTML = ""
+    console.log("click")
+    getListings(endpointAsc)
+});
+
+
+async function getListings (endpoint) {
     try{
-        const reply = await fetch(`${baseUrl}/auction/listings`);
+        const reply = await fetch(`${baseUrl}${endpoint}`);
         const data = await reply.json();
         const today = new Date();
         const todayIso = today.toISOString();
@@ -43,4 +60,5 @@ async function getListings () {
     }
 }
 
-getListings();
+getListings(baseEndPoint);
+

@@ -1,6 +1,5 @@
 
 import { baseUrl } from "./components/baseUrl.mjs";
-// import { options } from "./components/auth-header.mjs";
 const placeBidBtn = document.querySelector(".place-bid-btn");
 const bidSuccess = document.querySelector(".place-bid-success");
 const bidError = document.querySelector(".place-bid-error");
@@ -10,12 +9,10 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id")
 
-placeBidBtn.addEventListener("click", placeBid)
-console.log(localStorage.getItem("expired"))
+placeBidBtn.addEventListener("click", placeBid);
 
 if(localStorage.getItem("name")===null) {
     placeBidBtn.innerHTML = `Log in to bid`
-    // placeBidBtn.innerHTML = `${localStorage.getItem("expired")==="Yes" ? `Item Expired` : `Login to place bid`}`
     placeBidBtn.disabled = true
 }
 
