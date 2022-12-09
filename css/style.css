@@ -10912,6 +10912,11 @@ textarea.form-control-lg {
 
 .user-listings__make-bid {
   background-color: #F9F9F9;
+  max-width: 400px !important;
+}
+
+.user-listings__bid-container {
+  max-width: 400px;
 }
 
 .user-listings__bidder-info {
@@ -10920,6 +10925,21 @@ textarea.form-control-lg {
 
 .user-listings__bid-container {
   max-height: 500px;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  background-color: rgb(58, 58, 58);
+  border-radius: 5px;
+}
+
+.carousel-control-next-icon, .carousel-control-next {
+  color: black;
+}
+
+.slider-images {
+  max-height: 400px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .place-bid-success-hidden, .place-bid-error-hidden {
@@ -10953,16 +10973,6 @@ textarea.form-control-lg {
 .item-container-test {
   background-color: #F9F9F9;
   color: red;
-}
-
-.carousel-control-next-icon, .carousel-control-next {
-  color: black;
-}
-
-.slider-images {
-  width: 200px;
-  height: 400px;
-  object-fit: contain;
 }
 
 body {

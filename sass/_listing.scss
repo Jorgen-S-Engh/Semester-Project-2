@@ -2,6 +2,8 @@
     background-color: $white;
 }
 
+
+
 .listing__item-container{
     width:80%;
     // background-color: $primary;
@@ -33,6 +35,11 @@
 
 .user-listings__make-bid{
     background-color: $white;
+    max-width: 400px !important;
+}
+
+.user-listings__bid-container{
+    max-width: 400px;
 }
 
 .user-listings__bidder-info{
@@ -41,6 +48,25 @@
 .user-listings__bid-container{
     max-height: 500px;
 }
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    background-color: rgb(58, 58, 58);
+    border-radius: 5px;
+}
+
+.carousel-control-next-icon, .carousel-control-next{
+    color:black;
+}
+
+.slider-images{
+
+    max-height:400px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+
+
 
 
 //why no work?

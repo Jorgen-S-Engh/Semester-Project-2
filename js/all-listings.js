@@ -1,12 +1,14 @@
 import { baseUrl } from "./components/baseUrl.mjs";
 const listingContainer = document.querySelector(".listing__container");
 
-const baseEndPoint = "/auction/listings"
-const endpointDesc ="/auction/listings?sort=created&sortOrder=desc"
-const endpointAsc ="/auction/listings?sort=created&sortOrder=asc"
+const baseEndPoint = "/auction/listings";
+const endpointDesc = "/auction/listings?sort=created&sortOrder=desc";
+const endpointAsc = "/auction/listings?sort=created&sortOrder=asc";
+const endpointActive = "/auction/listings?_active=true";
 
 const btnNewest = document.querySelector(".btn-newest");
 const btnOldest = document.querySelector(".btn-oldest");
+const btnActive = document.querySelector(".btn-active-posts");
 
 btnNewest.addEventListener("click", () => {
     listingContainer.innerHTML = ""
@@ -18,6 +20,12 @@ btnOldest.addEventListener("click", () => {
     listingContainer.innerHTML = ""
     console.log("click")
     getListings(endpointAsc)
+});
+
+btnActive.addEventListener("click", () => {
+    listingContainer.innerHTML = ""
+    console.log("click")
+    getListings(endpointActive)
 });
 
 
