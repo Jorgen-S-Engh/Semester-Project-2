@@ -28,6 +28,10 @@ btnActive.addEventListener("click", () => {
     getListings(endpointActive)
 });
 
+/**
+ * GET data from the API, creates HTML base on the data
+ */
+
 
 async function getListings (endpoint) {
     try{
