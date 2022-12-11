@@ -10975,6 +10975,16 @@ textarea.form-control-lg {
   color: red;
 }
 
+.card-container {
+  position: relative;
+  height: 500px;
+}
+
+.btn-more-info-container {
+  position: absolute;
+  bottom: 0px;
+}
+
 body {
   background: linear-gradient(to right, #323859, #1A1826);
 }

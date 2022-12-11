@@ -27,3 +27,12 @@
     background-color: $white;
     color:red;
 }
+
+.card-container{
+    position:relative;
+    height:500px;
+}
+.btn-more-info-container{
+    position: absolute;
+    bottom: 0px;
+}

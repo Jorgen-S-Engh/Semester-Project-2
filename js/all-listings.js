@@ -52,9 +52,9 @@ async function getListings (endpoint) {
                                                 <p class="description">${data[i].description}</p>
                                                 <p>Bids: ${data[i]._count.bids}</p>
                                                 <p>${endDateIso < todayIso ? `<p>Expired: ${endDate.toDateString()}</p>` : `<p>Ends at: ${endDate.toDateString()}</p>`}</p>
-                                                
-                                                <button class="btn btn-primary m-3" ${endDateIso < todayIso ? `disabled="True"`: ""}>More info</button>
-                                                </p>${data[i].media.length}
+                                                <div class="btn-more-info-container mt-2">
+                                                    <button class="btn btn-primary m-1" ${endDateIso < todayIso ? `disabled="True"`: ""}>More info</button>
+                                                </div>
                                             </div>
                                         </a>
                                     </div>
