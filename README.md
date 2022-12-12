@@ -12,6 +12,7 @@
 - Rounded corner på alle bildene i all listings
 - Search
 - all-listings.js gjøre description, bids og enddate penere.
+- For testing, må læreren kjøre testene og installere alle dependencies som Jest, esLint og Babel?
 
 Gjøremål 5.12
 

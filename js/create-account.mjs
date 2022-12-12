@@ -1,4 +1,6 @@
 import { baseUrl } from "./components/baseUrl.mjs";
+
+
 const endpoint = "/auction/auth/register"
 const createAccountBtn = document.querySelector(".create_acc_btn")
 const successMessage = document.querySelector(".alert-success-CA")

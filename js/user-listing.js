@@ -65,16 +65,16 @@ getUserListings();
 
 // Legger på en eventlistner på containeren som den skal ligge inn i. Sjekker at event.target er korrekt => gjør det man ønsker. 
 
-userListingsContainer.addEventListener("click", deleteListing)
+// userListingsContainer.addEventListener("click", deleteListing)
 
-function deleteListing(id){
-    window.onclick = (e) => {
-        if (e.target.classList.contains('btn-delete-listing')) {
-          console.log("button!!!!")
-        }
-    };
+// function deleteListing(id){
+//     window.onclick = (e) => {
+//         if (e.target.classList.contains('btn-delete-listing')) {
+//           console.log("button!!!!")
+//         }
+//     };
 
-}
+// }
 
 
 
