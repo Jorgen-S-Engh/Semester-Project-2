@@ -3,21 +3,37 @@ const listingsContainer = document.querySelector(".user-listings__container");
 const bidContainer = document.querySelector(".user-listings__bid-container");
 const highestBid = document.querySelector(".highest-bid");
 const caroContainer = document.querySelector(".carousel-container");
+const sliderNav = document.querySelectorAll(".slider-nav");
+const btnCreateListing = document.querySelector(".place-bid-btn");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id")
-console.log(id)
+
+
+/**
+ * Sends a GET request to contain data about the user. Validate different data and create HTML. 
+ */
 
 async function getSingleListing(){
     try{
         const reply = await fetch(`${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`)
         const data = await reply.json();
-        console.log(data)
         const today = new Date();
-        const endDate = new Date(data.endsAt)
-        today > endDate ? localStorage.setItem("expired", "Yes") : localStorage.setItem("expired", "No");
+        const endDate = new Date(data.endsAt);
+        if (data.media.length ===1){
+            console.log(data.media.length);
+            for (const i of sliderNav) {
+                i.classList.add("visually-hidden");
+            }
+        }
+        if (today.toISOString() > endDate.toISOString()){
+            btnCreateListing.disabled = true; 
 
+        }
         if(data.media.length === 0){
+            for (const i of sliderNav) {
+                i.classList.add("visually-hidden");
+            }
             caroContainer.innerHTML = 
                                         `         
                                         <div class="carousel-item active">
@@ -27,7 +43,6 @@ async function getSingleListing(){
 
         }else{       
             for (let i = 0; i < data.media.length; i++){
-                console.log(i)
             caroContainer.innerHTML += 
                                         `         
                                         <div class="carousel-item${i === 0 ? ' active'   : ''} mt-4">
@@ -35,9 +50,6 @@ async function getSingleListing(){
                                         </div>
                                         `
         }}
-
-
-
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
                                             <h3>${data.title}</h3                     

@@ -30,8 +30,8 @@ btnActive.addEventListener("click", () => {
 
 /**
  * GET data from the API, creates HTML base on the data
+ * @param {string} endpoint baseUrl + endpoint GET data from the api, different endpoint will result in different data.
  */
-
 
 async function getListings (endpoint) {
     try{
@@ -48,19 +48,23 @@ async function getListings (endpoint) {
 
             listingContainer.innerHTML += 
                                             `
-                                        <div class="col-sm-12 col-md-4 col-lg-3 item-container-test rounded m-3 p-3">
-                                        <a href="product.html?id=${data[i].id}">
-                                            <div class="card-container d-flex flex-column align-items-center justify-content-center text-center">
-                                                <h4>${data[i].title}</h4>
-                                                <img src="${data[i].media.length === 0 ? `img/new-product.png` : `${data[i].media.length > 1}` ? `${data[i].media[0]}` : `${data[i].media}` }" class="card-img-top item-img mt-3" alt="Image of post the with the title: ${data[i].title}">
-                                                <p class="description">${data[i].description}</p>
-                                                <p>Bids: ${data[i]._count.bids}</p>
-                                                <p>${endDateIso < todayIso ? `<p>Expired: ${endDate.toDateString()}</p>` : `<p>Ends at: ${endDate.toDateString()}</p>`}</p>
-                                                <div class="btn-more-info-container mt-2">
-                                                    <button class="btn btn-primary m-1" ${endDateIso < todayIso ? `disabled="True"`: ""}>More info</button>
+                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 item-container-product rounded m-3 p-3">
+                                            <a href="product.html?id=${data[i].id}">
+                                                <div class="card-container d-flex flex-column align-items-center justify-content-start text-center">
+                                                    <h4>${data[i].title}</h4>
+                                                    <div class="item-media-container">
+                                                        <img src="${data[i].media.length === 0 ? `img/new-product.png` : `${data[i].media.length > 1}` ? `${data[i].media[0]}` : `${data[i].media}` }" class="card-img-top item-img mt-3 rounded" alt="Image of post the with the title: ${data[i].title}">
+                                                    </div>
+                                                    <div class="overflow-auto mh-20">
+                                                        <p class="description">${data[i].description}</p>
+                                                    </div>
+                                                    <p>Bids: ${data[i]._count.bids}</p>
+                                                    <p>${endDateIso < todayIso ? `<p>Expired: ${endDate.toDateString()}</p>` : `<p>Ends at: ${endDate.toDateString()}</p>`}</p>
+                                                    <div class="btn-more-info-container mt-2">
+                                                        <button class="btn btn-primary m-1">More info</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
+                                            </a>
                                     </div>
 
                                             `

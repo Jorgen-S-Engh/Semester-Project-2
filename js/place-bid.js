@@ -16,6 +16,10 @@ if(localStorage.getItem("name")===null) {
     placeBidBtn.disabled = true
 }
 
+/**
+ * Sends a POST request to place a bid on a listing.
+ */
+
 async function placeBid(e){
     e.preventDefault();
     const bidAmount = document.querySelector(".bid-amount").value;

@@ -23,7 +23,7 @@
     right:30px;
 }
 
-.item-container-test{
+.item-container-product{
     background-color: $white;
     color:red;
 }
@@ -31,6 +31,14 @@
 .card-container{
     position:relative;
     height:500px;
+}
+
+.card-container *{
+    margin-bottom: 5px;
+}
+
+.description{
+    max-height:75px;
 }
 .btn-more-info-container{
     position: absolute;

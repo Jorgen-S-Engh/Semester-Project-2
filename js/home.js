@@ -10,7 +10,9 @@ if(localStorage.getItem("name")=== null){
     profileName.innerHTML = `${localStorage.getItem("name")}`
 }
 
-
+/**
+ * Takes the image from the local storage and sets it as profile image. If localstorrage = "" the profile image will be an placeholder-image.
+ */
 
 function setImg () {
     if (localStorage.getItem("avatar") !== ""){

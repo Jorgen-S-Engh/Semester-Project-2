@@ -7,6 +7,11 @@ const changeAvatarmessage = document.querySelector(".change-avatar-error");
 
 btnChangeAvatar.addEventListener("click", changeMedia);
 
+
+/**
+ * Changes the media for avatar
+ */
+
 async function changeMedia (e){
     e.preventDefault();
     

@@ -16,6 +16,11 @@ loginBtn.addEventListener("click", (e) => {
     email: loginEmail,
     password: loginPassword,
   };
+
+  /**
+ * Sends a POST request to login and require a JSON web token. 
+ * @param {string} endpoint baseUrl + endpoint creates the full request required for this API-call. 
+ */
   async function login(endpoint) {
     try {
       const reply = await fetch(`${baseUrl}${endpoint}`, {

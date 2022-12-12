@@ -54,12 +54,14 @@
     border-radius: 5px;
 }
 
-.carousel-control-next-icon, .carousel-control-next{
+.carousel-control-next-icon, .carousel-control-prev-icon{
     color:black;
+    // position: absolute !important;
+    // top:150px;
 }
 
 .slider-images{
-    max-height:400px;
+    height: 300px;
     object-fit: contain;
     margin: 0 auto;
 }

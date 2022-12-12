@@ -7,6 +7,11 @@ const errorInfo = document.querySelector(".create_account_error")
 
 createAccountBtn.addEventListener("click", createAccount)
 
+/**
+ * Sends a POST request to create a new account. Takes values from the input fields and modifies the data to crate the body of the API-call.  
+ * 
+ */
+
 async function createAccount (e){
     e.preventDefault();
     const loginName = document.querySelector(".login_name").value;

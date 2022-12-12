@@ -10932,12 +10932,12 @@ textarea.form-control-lg {
   border-radius: 5px;
 }
 
-.carousel-control-next-icon, .carousel-control-next {
+.carousel-control-next-icon, .carousel-control-prev-icon {
   color: black;
 }
 
 .slider-images {
-  max-height: 400px;
+  height: 300px;
   object-fit: contain;
   margin: 0 auto;
 }
@@ -10970,7 +10970,7 @@ textarea.form-control-lg {
   right: 30px;
 }
 
-.item-container-test {
+.item-container-product {
   background-color: #F9F9F9;
   color: red;
 }
@@ -10978,6 +10978,14 @@ textarea.form-control-lg {
 .card-container {
   position: relative;
   height: 500px;
+}
+
+.card-container * {
+  margin-bottom: 5px;
+}
+
+.description {
+  max-height: 75px;
 }
 
 .btn-more-info-container {

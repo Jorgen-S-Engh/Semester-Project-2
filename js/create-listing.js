@@ -3,9 +3,19 @@ const newListBtn = document.querySelector(".new-listing-modal__btn");
 const errorMessage = document.querySelector(".alert-danger-CE");
 const errorInfo = document.querySelector(".create-entry-error");
 const successMessage = document.querySelector(".alert-success-CE");
+// const btnAddMoreMedia = document.querySelector(".btn-add-more-images")
+
+
+
 const baseUrlCE = "https://api.noroff.dev/api/v1";
 
 newListBtn.addEventListener("click", createEntry);
+
+
+/**
+ * Sends a POST request to create a new entry. Changes the values from inputfield to send as the body of the request. 
+ * 
+ */
 
 async function createEntry () {
     const ceTags = document.querySelector(".CE-tags").value;
@@ -42,6 +52,7 @@ async function createEntry () {
         media: ceMediaArray,
         endsAt: isoDate,
     };
+    console.log(entry)
 
     if(entry.title === ""){
         console.log("title not present")
@@ -75,7 +86,12 @@ async function createEntry () {
                 errorMessage.classList.add("alert-danger-hidden");
                 successMessage.classList.remove("alert-success-hidden");
                 setTimeout(() => {
-                    modal.classList.add("modal-hidden")
+                    ceTags.value = "";
+                    ceMedia.value = "";
+                    ceEndDate.value = "";
+                    ceDesc.value = "";
+                    ceTitle.value = "";
+                    location.reload();
                   }, "2000")
             }
         }

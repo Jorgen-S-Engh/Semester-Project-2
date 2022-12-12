@@ -9,6 +9,9 @@
 - Gjør alle funksjoner om til "selv-kjørende"
 - på place-bid.js gjør at place bid ikke går om item har expired.
 - OBS Mulighet for å ha flere bilder i create listing!
+- Rounded corner på alle bildene i all listings
+- Search
+- all-listings.js gjøre description, bids og enddate penere.
 
 Gjøremål 5.12
 
