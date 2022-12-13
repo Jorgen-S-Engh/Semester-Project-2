@@ -18,15 +18,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex justify-content-center">
         <ul class="navbar-nav d-flex">
             <li class="nav-item active">
-                <a href="profile.html"><img src="" alt=""></a>
+                <a href="profile.html"><img src="" alt="Profile picture"></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-center" href="feed.html"><img class="house-logo" src="img\home white.png" alt="Icon of a house"></a>
+                <a class="nav-link text-center" href="feed.html"><img class="house-logo" src="img/home white.png" alt="Icon of a house that takes you back to feed.html"></a>
             </li>
         </ul>
     </nav>
   <!-- Modal Change Avatar -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="change-avatar-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -66,7 +66,7 @@
         </div>
         <!-- Button trigger modal -->
         <div class="container edit-avatar-btn m-3 d-flex justify-content-center">
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#change-avatar-modal">
                 Change avatar
             </button>
         </div>
@@ -88,7 +88,7 @@
                         <p>Something went wrong: </p>
                         <p class="create-entry-error"></p>
                     </div>
-                    <form action="" class="text-center">
+                    <form class="text-center">
                         <div>
                             <label class="form-label">Title</label>
                             <input type="text" class="form-control CE-title CE-title-red" placeholder="Required" />
@@ -103,7 +103,7 @@
                         </div>
                         <div>
                             <label class="form-label">End Date</label>
-                            <input type="date" class="form-control CE-end-date" placeholder="Required" />
+                            <input type="date" class="form-control CE-end-date"/>
                         </div>
                         <div>
                             <label class="form-label">Description</label>
