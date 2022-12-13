@@ -1,4 +1,4 @@
-import { baseUrl } from "./components/baseUrl.mjs";
+import { baseUrl } from "./components/baseUrl.js";
 const listingContainer = document.querySelector(".listing__container");
 
 const baseEndPoint = "/auction/listings";
@@ -33,19 +33,17 @@ btnActive.addEventListener("click", () => {
  * @param {string} endpoint baseUrl + endpoint GET data from the api, different endpoint will result in different data.
  */
 
-async function getListings (endpoint) {
+export async function getListings (endpoint) {
     try{
         const reply = await fetch(`${baseUrl}${endpoint}`);
+        console.log(`${baseUrl}${endpoint}`)
         const data = await reply.json();
         const today = new Date();
         const todayIso = today.toISOString();
         
-        
         for (let i = 0; i < data.length; i++){
             const endDate = new Date(data[i].endsAt)
             const endDateIso = endDate.toISOString();
-
-
             listingContainer.innerHTML += 
                                             `
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 item-container-product rounded m-3 p-3">

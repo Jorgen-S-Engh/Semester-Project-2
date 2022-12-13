@@ -1,4 +1,4 @@
-import { baseUrl } from "./components/baseUrl.mjs";
+import { baseUrl } from "./components/baseUrl.js";
 // https://nf-api.onrender.com/api/v1"
 
 const loginEmail = document.querySelector(".login_email").value = localStorage.getItem("email")
@@ -21,7 +21,7 @@ loginBtn.addEventListener("click", (e) => {
  * Sends a POST request to login and require a JSON web token. 
  * @param {string} endpoint baseUrl + endpoint creates the full request required for this API-call. 
  */
-  async function login(endpoint) {
+ async function login(endpoint) {
     try {
       const reply = await fetch(`${baseUrl}${endpoint}`, {
         method: "POST",
@@ -53,3 +53,4 @@ loginBtn.addEventListener("click", (e) => {
   }
   login("/auction/auth/login");
 });
+

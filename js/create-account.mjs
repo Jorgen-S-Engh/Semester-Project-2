@@ -1,4 +1,4 @@
-import { baseUrl } from "./components/baseUrl.mjs";
+import { baseUrl } from "./components/baseUrl.js";
 
 
 const endpoint = "/auction/auth/register"

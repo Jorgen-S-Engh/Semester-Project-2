@@ -1,7 +1,10 @@
-import postOptions from "./auth-header.mjs";
+import { postOptions, getOptions } from '../components/auth-header';
 
-describe("postOptions", () => {
-  it("Return POST", () => {
-    expect(postOptions.method).toEqual("POST");
-  })
+test('postOptions has method property set to "POST"', () => {
+
+  expect(postOptions.method).toBe("POST");
+});
+
+test('getOptions has method property set to "GET"', () => {
+  expect(getOptions.method).toBe("GET");
 });

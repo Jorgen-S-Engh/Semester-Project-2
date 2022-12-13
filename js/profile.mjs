@@ -1,5 +1,5 @@
 import { setImg } from "./components/setProfileImg.mjs"
-import { baseUrl } from "./components/baseUrl.mjs";
+import { baseUrl } from "./components/baseUrl.js";
 const endpoint =`/auction/profiles/${localStorage.getItem("name")}`
 const userInfo = document.querySelector(".user-info");
 const userListings = document.querySelector(".user-listings");

@@ -1,4 +1,4 @@
-import { baseUrl } from "./components/baseUrl.mjs";
+import { baseUrl } from "./components/baseUrl.js";
 const listingsContainer = document.querySelector(".user-listings__container");
 const bidContainer = document.querySelector(".user-listings__bid-container");
 const highestBid = document.querySelector(".highest-bid");
@@ -11,17 +11,17 @@ const id = params.get("id")
 
 
 /**
- * Sends a GET request to contain data about the user. Validate different data and create HTML. 
+ * Use a GET request to retrieves a single listing from the server and displays its details on the page.
  */
 
 async function getSingleListing(){
     try{
         const reply = await fetch(`${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`)
         const data = await reply.json();
+        console.log(data)
         const today = new Date();
         const endDate = new Date(data.endsAt);
         if (data.media.length ===1){
-            console.log(data.media.length);
             for (const i of sliderNav) {
                 i.classList.add("visually-hidden");
             }

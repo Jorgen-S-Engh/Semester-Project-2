@@ -13,6 +13,9 @@
 - Search
 - all-listings.js gjøre description, bids og enddate penere.
 - For testing, må læreren kjøre testene og installere alle dependencies som Jest, esLint og Babel?
+- Array sort og se på compare functions. Gjør dette for bid history.
+- Hvis description er null, sett inn noe annet.
+- Skriv at jeg ikke får ha .mjs når jeg tester.
 
 Gjøremål 5.12
 

@@ -1,5 +1,5 @@
 
-import { baseUrl } from "./components/baseUrl.mjs";
+import { baseUrl } from "./components/baseUrl.js";
 const placeBidBtn = document.querySelector(".place-bid-btn");
 const bidSuccess = document.querySelector(".place-bid-success");
 const bidError = document.querySelector(".place-bid-error");
@@ -37,6 +37,7 @@ async function placeBid(e){
         const response = await fetch(`${baseUrl}/auction/listings/${id}/bids`,options )
         const data = await response.json();
         console.log(response)
+        console.log(data)
         if (response.status === 200){
             bidSuccess.classList.remove("place-bid-success-hidden")
             setTimeout(() => {
@@ -47,7 +48,6 @@ async function placeBid(e){
         }else{
             bidError.classList.remove("place-bid-error-hidden")
             bidErrorMessage.innerHTML = `<p>${data.errors[0].message}</p>`
-
         }
         
     }catch(e){
