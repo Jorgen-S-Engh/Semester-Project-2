@@ -10826,7 +10826,6 @@ textarea.form-control-lg {
   margin: 25px;
   background-color: #F9F9F9;
 }
-
 .profile-info-container * {
   color: #323859;
 }
@@ -10859,18 +10858,10 @@ textarea.form-control-lg {
 .user-listings {
   background-color: #F9F9F9;
 }
-.user-listings.__item {
-  background-color: #323859;
-}
-
 .user-listings__item {
   background-color: #323859;
   color: #F9F9F9;
   width: 80%;
-}
-
-.btn-delete-listing {
-  color: red;
 }
 
 .house-logo {
@@ -10881,31 +10872,10 @@ textarea.form-control-lg {
   background-color: #F9F9F9;
 }
 
-.listing__item-container {
-  width: 80%;
-}
-
-.listing__item-container * {
-  color: #F9F9F9;
-}
-
-.user-listings__img-container {
-  max-height: 400px;
-  max-width: 400px;
-  object-fit: contain;
-}
-
-.user-listings__img-container img {
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
-}
-
 .user-listings__bid-container {
   background-color: #323859;
   width: 75%;
 }
-
 .user-listings__bid-container * {
   color: #F9F9F9;
 }
@@ -10929,11 +10899,8 @@ textarea.form-control-lg {
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
   background-color: rgb(58, 58, 58);
-  border-radius: 5px;
-}
-
-.carousel-control-next-icon, .carousel-control-prev-icon {
   color: black;
+  border-radius: 5px;
 }
 
 .slider-images {
@@ -10979,7 +10946,6 @@ textarea.form-control-lg {
   position: relative;
   height: 500px;
 }
-
 .card-container * {
   margin-bottom: 5px;
 }

@@ -21,11 +21,13 @@
     padding: 10px;
     margin: 25px;
     background-color: $white;
+
+    & * {
+        color: $primary;
+    }
+    
 }
 
-.profile-info-container * {
-    color: $primary;
-}
 
 .new-listing-modal {
 
@@ -55,20 +57,13 @@
 
 .user-listings {
     background-color: $white;
-
-    &.__item{
+    
+    &__item {
         background-color: $primary;
+        color: $white;
+        width: 80%;
     }
-}
-
-.user-listings__item{
-    background-color: $primary;
-    color:$white;
-    width: 80%;
-}
-
-.btn-delete-listing{
-    color:red;
+    
 }
 
 .house-logo{

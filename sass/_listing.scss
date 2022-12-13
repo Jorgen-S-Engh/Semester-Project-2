@@ -4,34 +4,54 @@
 
 
 
-.listing__item-container{
-    width:80%;
-    // background-color: $primary;
-}
-.listing__item-container *{
-    color: $white;
+// .listing__item-container{
+//     width:80%;
+//     // background-color: $primary;
+//     & *{
+//         color: $white;
+//     }
+// }
+// .listing__item-container *{
+//     color: $white;
 
-}
+// }
 
-.user-listings__img-container{
-    max-height: 400px;
-    max-width: 400px;
-    object-fit: contain;
-}
+// .user-listings__img-container{
+//     max-height: 400px;
+//     max-width: 400px;
+//     object-fit: contain;
 
-.user-listings__img-container img{
-    object-fit: contain;
-    height:100%;
-    width:100%;
-}
+//     img{
+//         object-fit: contain;
+//         height: 100%;
+//         width: 100%;
+//     }
+// }
+
+// .user-listings__img-container{
+//     max-height: 400px;
+//     max-width: 400px;
+//     object-fit: contain;
+// }
+
+// .user-listings__img-container img{
+//     object-fit: contain;
+//     height:100%;
+//     width:100%;
+// }
 
 .user-listings__bid-container{
     background-color: $primary;
     width:75%;
+
+    & *{
+        color:$white;
+    }
 }
-.user-listings__bid-container *{
-    color:$white;
-}
+
+// .user-listings__bid-container *{
+//     color:$white;
+// }
 
 .user-listings__make-bid{
     background-color: $white;
@@ -51,13 +71,8 @@
 
 .carousel-control-next-icon, .carousel-control-prev-icon{
     background-color: rgb(58, 58, 58);
-    border-radius: 5px;
-}
-
-.carousel-control-next-icon, .carousel-control-prev-icon{
     color:black;
-    // position: absolute !important;
-    // top:150px;
+    border-radius: 5px;
 }
 
 .slider-images{
@@ -66,8 +81,6 @@
     margin: 0 auto;
 }
 
-
-//why no work?
 .place-bid-success-hidden, .place-bid-error-hidden{
     display:none;
 }

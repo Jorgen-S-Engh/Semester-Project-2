@@ -22,6 +22,8 @@ if(localStorage.getItem("name")===null) {
 
 async function placeBid(e){
     e.preventDefault();
+    bidSuccess.classList.add("place-bid-success-hidden");
+    bidError.classList.add("place-bid-error-hidden")
     const bidAmount = document.querySelector(".bid-amount").value;
     const bid = {amount: Number(bidAmount)}
     console.log(bid)

@@ -31,11 +31,13 @@
 .card-container{
     position:relative;
     height:500px;
+
+    & *{
+        margin-bottom: 5px;
+
+    }
 }
 
-.card-container *{
-    margin-bottom: 5px;
-}
 
 .description{
     max-height:75px;

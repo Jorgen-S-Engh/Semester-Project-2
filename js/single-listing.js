@@ -50,14 +50,15 @@ async function getSingleListing(){
                                         </div>
                                         `
         }}
+        console.log(data.description === null)
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
                                             <h3>${data.title}</h3                     
-                                            <h4>Description</h4>
-                                            <p>${data.description}</p>
+                                            <h4>Description:</h4>
+                                            <p>${data.description === null ? '<i>No description added by user</i>' : `${data.description}`}
                                             <p><strong>Seller:</strong></p>
                                             <p>${data.seller.name}</p>
-                                            <p><strong>End date:</strong></p>
+                                            <p><strong>${today.toISOString() > endDate.toISOString() ? `Expired` : `End date:`}</strong></p>
                                             <p>${endDate.toDateString()}
                                             <p><strong>Number of bids:</strong></p>
                                             <p>${data.bids.length}</p>
@@ -82,7 +83,7 @@ async function getSingleListing(){
         }else{
             bidContainer.innerHTML = 
                                         `
-                                        <p class="text-center">${today.toISOString() > endDate.toISOString() ? `<p>Item expired without bids` : `Be the first one to bid on this item!`}</p>
+                                        <p class="text-center"><p>${today.toISOString() > endDate.toISOString() ? `Item expired without bids` : `Be the first one to bid on this item!`}</p>
                                         `
             highestBid.innerHTML = `0`
         }
