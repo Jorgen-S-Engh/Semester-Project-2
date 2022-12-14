@@ -18,6 +18,7 @@ async function getSingleListing(){
     try{
         const reply = await fetch(`${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`)
         const data = await reply.json();
+        console.log(data.bids)
         const today = new Date();
         const endDate = new Date(data.endsAt);
         console.log(data)
@@ -68,9 +69,13 @@ async function getSingleListing(){
                                         `
         
         if(data.bids.length > 0){
+            const createdArray = [];
             const bids =[];
+            const created = new Date()
             for (let i = 0; i < data.bids.length; i++){
-                bids.push(data.bids[i].amount)
+                const createdDate = new Date(data.bids[i].created);
+                createdArray.push(createdDate, data.bids[i].bidderName, data.bids[i].amount);
+                bids.push(data.bids[i].amount);
 
                 bidContainer.innerHTML += `
                 <div class="p-2 mb-2 rounded user-listings__bidder-info w-100">
@@ -80,6 +85,25 @@ async function getSingleListing(){
                 
                 ` 
             }
+            // const sortedArray = createdArray.sort(function(a, b){return a-b});
+            // console.log(createdArray)
+            // console.log(sortedArray)
+
+              const createdArraySort = createdArray.reduce((acc, value, index) => {
+                if (index % 3 === 0) {
+                  acc[value] = {
+                    user: array[index + 1],
+                    count: array[index + 2]
+                  };
+                }
+                return acc;
+              }, {});
+              
+              console.log(createdArraySort);
+              
+
+
+
             highestBid.innerHTML = `<strong>${Math.max(...bids)}</strong>`
             
         }else{

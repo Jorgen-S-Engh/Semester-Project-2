@@ -47,7 +47,7 @@ export async function getListings (endpoint) {
             const endDate = new Date(data[i].endsAt)
             const endDateIso = endDate.toISOString();
             listingContainer.innerHTML += 
-                                            `
+                                        `
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 item-container-product rounded m-3 p-3">
                                             <a href="product.html?id=${data[i].id}">
                                                 <div class="card-container d-flex flex-column align-items-center justify-content-start text-center">
@@ -67,7 +67,7 @@ export async function getListings (endpoint) {
                                             </a>
                                         </div>
 
-                                            `
+                                        `
         }
     }
     catch(err){

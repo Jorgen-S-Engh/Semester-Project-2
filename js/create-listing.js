@@ -1,13 +1,10 @@
-// ---------------------------------------Create Entry -------------------------------------
+import { baseUrl } from "./components/baseUrl.js";
+
 const newListBtn = document.querySelector(".new-listing-modal__btn");
 const errorMessage = document.querySelector(".alert-danger-CE");
 const errorInfo = document.querySelector(".create-entry-error");
 const successMessage = document.querySelector(".alert-success-CE");
 // const btnAddMoreMedia = document.querySelector(".btn-add-more-images")
-
-
-
-const baseUrlCE = "https://api.noroff.dev/api/v1";
 
 newListBtn.addEventListener("click", createEntry);
 
@@ -30,13 +27,13 @@ async function createEntry () {
     const today = new Date();
     const todayIso = today.toISOString();
     let isoDate;
-
+    
     if (ceEndDate === ""){
         errorMessage.classList.remove("alert-danger-hidden");
         errorInfo.innerHTML = `<p>Plese enter a valid date<p>`
     }
     else{
-        newDate = new Date(ceEndDate);
+        const newDate = new Date(ceEndDate);
         isoDate = newDate.toISOString();
 
     }
@@ -52,7 +49,6 @@ async function createEntry () {
         media: ceMediaArray,
         endsAt: isoDate,
     };
-    console.log(entry)
 
     if(entry.title === ""){
         errorMessage.classList.remove("alert-danger-hidden")
@@ -66,7 +62,7 @@ async function createEntry () {
 
     if (entry.title !== "" && todayIso < isoDate){
         try{
-            const reply = await fetch(`${baseUrlCE}/auction/listings`, {
+            const reply = await fetch(`${baseUrl}/auction/listings`, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
