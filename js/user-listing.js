@@ -15,11 +15,12 @@ async function getUserListings (){
         try{
             const reply = await fetch(`${baseUrl}/auction/profiles/${localStorage.getItem("name")}/listings`,options)
             const data = await reply.json();
-            console.log(data)
+            console.log(reply.status)
             userListingsHeadline.innerHTML = `${localStorage.getItem("name")}'s items`
             const listingID = []
-    
+
             for(let i = 0; i < data.length; i++){
+                console.log(i)
                 userListingsContainer.innerHTML +=
                                             `<div class="user-listings__item text-center m-3 p-3 rounded">
                                                 <img class="card-img-top item-img mt-3" src="${data[i].media}" alt="${data[i].title}">
@@ -31,8 +32,15 @@ async function getUserListings (){
     
                 listingID.push(data[i].id)
             }
-            deleteListing(listingID);
+            // deleteListing(listingID);
         }catch(e){
+            console.log("this is catch")
+            userListingsContainer.innerHTML =   `
+                                                <div class="api-error d-flex flex-column align-items-center text-center rounded p-3">
+                                                    <p>Something went wrong, please try again</p>
+                                                    <p>Error: ${e}</p>
+                                                </div>
+                                                 `
     
         }
 

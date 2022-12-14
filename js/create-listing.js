@@ -76,8 +76,7 @@ async function createEntry () {
                 body: JSON.stringify(entry),
             });
             const data = await reply.json();
-            console.log(reply)
-            console.log(data)
+
             if (reply.status === 201){
                 errorMessage.classList.add("alert-danger-hidden");
                 successMessage.classList.remove("alert-success-hidden");

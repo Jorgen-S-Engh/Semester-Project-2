@@ -57,7 +57,7 @@ async function getSingleListing(){
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
                                             <h3>${data.title}</h3                     
                                             <h4>Description:</h4>
-                                            <p>${data.description === null ? '<i>No description added by user</i>' : `${data.description}`}
+                                            <p class="description">${data.description === null || data.description === "" ? '<p><i>No description added by user</i></p>' : `${data.description}`}</p>
                                             <p><strong>Seller:</strong></p>
                                             <p>${data.seller.name}</p>
                                             <p><strong>${today.toISOString() > endDate.toISOString() ? `Expired` : `End date:`}</strong></p>

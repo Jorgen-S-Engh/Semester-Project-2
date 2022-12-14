@@ -56,7 +56,7 @@ export async function getListings (endpoint) {
                                                         <img src="${data[i].media.length === 0 ? `img/new-product.png` : `${data[i].media.length > 1}` ? `${data[i].media[0]}` : `${data[i].media}` }" class="card-img-top item-img mt-3" alt="Image of post the with the title: ${data[i].title}">
                                                     </div>
                                                     <div class="overflow-auto mh-20">
-                                                        <p class="description">${data[i].description}</p>
+                                                        <p class="description">${data[i].description === null || data[i].description === "" ? '<p><i>No description added by user</i></p>' : `${data[i].description}`}</p>
                                                     </div>
                                                     <p>Bids: ${data[i]._count.bids}</p>
                                                     <p>${endDateIso < todayIso ? `<p>Expired: ${endDate.toDateString()}</p>` : `<p>Ends at: ${endDate.toDateString()}</p>`}</p>
