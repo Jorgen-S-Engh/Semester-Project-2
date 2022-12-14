@@ -18,9 +18,12 @@ async function getSingleListing(){
     try{
         const reply = await fetch(`${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`)
         const data = await reply.json();
-        console.log(data)
         const today = new Date();
         const endDate = new Date(data.endsAt);
+        console.log(data)
+        if(reply.status !== 200){
+            throw data.errors[0].message
+        }
         if (data.media.length ===1){
             for (const i of sliderNav) {
                 i.classList.add("visually-hidden");
@@ -50,7 +53,6 @@ async function getSingleListing(){
                                         </div>
                                         `
         }}
-        console.log(data.description === null)
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
                                             <h3>${data.title}</h3                     
@@ -90,6 +92,13 @@ async function getSingleListing(){
 
     }
     catch(e){
+        listingsContainer.innerHTML =   `
+                                        <div class="api-error d-flex flex-column align-items-center text-center rounded">
+                                            <p>Something went wrong, please try again</p>
+                                            <p>Error: ${e}</p>
+                                        </div>
+                                        `
+
 
     }
 }

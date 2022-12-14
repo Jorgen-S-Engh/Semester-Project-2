@@ -36,11 +36,13 @@ btnActive.addEventListener("click", () => {
 export async function getListings (endpoint) {
     try{
         const reply = await fetch(`${baseUrl}${endpoint}`);
-        console.log(`${baseUrl}${endpoint}`)
         const data = await reply.json();
+
+        if(reply.status !== 200){
+            throw `${data.errors[0].message}`
+        }
         const today = new Date();
         const todayIso = today.toISOString();
-        
         for (let i = 0; i < data.length; i++){
             const endDate = new Date(data[i].endsAt)
             const endDateIso = endDate.toISOString();
@@ -51,7 +53,7 @@ export async function getListings (endpoint) {
                                                 <div class="card-container d-flex flex-column align-items-center justify-content-start text-center">
                                                     <h4>${data[i].title}</h4>
                                                     <div class="item-media-container">
-                                                        <img src="${data[i].media.length === 0 ? `img/new-product.png` : `${data[i].media.length > 1}` ? `${data[i].media[0]}` : `${data[i].media}` }" class="card-img-top item-img mt-3 rounded" alt="Image of post the with the title: ${data[i].title}">
+                                                        <img src="${data[i].media.length === 0 ? `img/new-product.png` : `${data[i].media.length > 1}` ? `${data[i].media[0]}` : `${data[i].media}` }" class="card-img-top item-img mt-3" alt="Image of post the with the title: ${data[i].title}">
                                                     </div>
                                                     <div class="overflow-auto mh-20">
                                                         <p class="description">${data[i].description}</p>
@@ -63,13 +65,17 @@ export async function getListings (endpoint) {
                                                     </div>
                                                 </div>
                                             </a>
-                                    </div>
+                                        </div>
 
                                             `
         }
-
     }
-    catch(e){
+    catch(err){
+        listingContainer.innerHTML = `<div class="api-error d-flex flex-column align-items-center text-center rounded">
+                                            <p>Something went wrong, please try again</p>
+                                            <p>Error: ${err}</p>
+                                        </div>`
+
 
     }
 }

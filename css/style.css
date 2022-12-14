@@ -10980,6 +10980,11 @@ a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
 
+.api-error {
+  color: #F9F9F9;
+  background-color: #323859;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

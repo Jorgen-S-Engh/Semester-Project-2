@@ -18,33 +18,32 @@ async function getUserInfo() {
     try {
       const reply = await fetch(`${baseUrl}${endpoint}`, options)
       const data = await reply.json();
-      userInfo.innerHTML = `
-                                <h1>${data.name}'s Profile</h1>
-                                <p>${data.email}<p>
-                                <p>Credits: <strong>${data.credits}</p></strong>
-                                <p>Listings: <strong>${data._count.listings}<p></strong>
-                                `
+
+      if(reply.status === 200){
+        userInfo.innerHTML = `
+        <h1>${data.name}'s Profile</h1>
+        <p>${data.email}<p>
+        <p>Credits: <strong>${data.credits}</p></strong>
+        <p>Listings: <strong>${data._count.listings}<p></strong>
+        `
+      }
+      else{
+        throw data.errors[0].message
+      }
+
+
     } catch (e) {
-      console.log(e);
+      userInfo.innerHTML =     `    
+                                <h1>Error</h1>
+                                </p>Something went wrong:</p>
+                                <p>${e}</p>
+                                `
     }
 }
 
 getUserInfo();
 
 
-// async function allListings() {
-//   try {
-//     const reply = await fetch(`${baseUrl}/auction/listings`, options)
-//     const data = await reply.json();
-//     for(let i = 0; i < data.length; i++){
-//       let d = new Date(`${data[i].endsAt}`);
-//     }
-//   } catch (e) {
-//     console.log(e);
-//   }
-// }
-
-// allListings();
 
 
 

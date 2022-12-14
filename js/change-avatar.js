@@ -30,20 +30,20 @@ async function changeMedia (e){
             body: JSON.stringify(avatar)
         })
         const data = await response.json();
-        console.log(response)
-        console.log(data)
-
         if(response.status === 200){
             localStorage.setItem("avatar", inputMedia.value);
             profileImg.src = inputMedia.value;
             inputMedia.value = "";
             location.reload();
         }else{
-            changeAvatarmessage.classList.remove("alert-danger-hidden");
-            changeAvatarmessage.innerHTML = `${data.errors[0].message}`
+            throw data.errors[0].message
+
         }
 
     }catch(e){
+        changeAvatarmessage.classList.remove("alert-danger-hidden");
+        changeAvatarmessage.innerHTML = e
+
         
     }
 }

@@ -1,5 +1,4 @@
 import { baseUrl } from "./components/baseUrl.js";
-// https://nf-api.onrender.com/api/v1"
 
 const loginEmail = document.querySelector(".login_email").value = localStorage.getItem("email")
 const loginPassword = document.querySelector(".login_password").value = localStorage.getItem("password")
@@ -43,12 +42,14 @@ loginBtn.addEventListener("click", (e) => {
         window.location.href = "feed.html";
         errorMessage.classList.add("alert-danger-hidden")
       }else{
-        errorMessage.classList.remove("alert-danger-hidden")
-        errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
+        throw data.errors[0].message
+
       }
 
     } catch (e) {
-      console.log(e);
+      errorMessage.classList.remove("alert-danger-hidden")
+      errorInfo.innerHTML = `<p>${e}<p>`
+      
     }
   }
   login("/auction/auth/login");

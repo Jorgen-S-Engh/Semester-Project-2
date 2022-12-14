@@ -55,7 +55,6 @@ async function createEntry () {
     console.log(entry)
 
     if(entry.title === ""){
-        console.log("title not present")
         errorMessage.classList.remove("alert-danger-hidden")
         errorInfo.innerHTML = `Please enter a title`
     }
@@ -79,23 +78,20 @@ async function createEntry () {
             const data = await reply.json();
             console.log(reply)
             console.log(data)
-            if (reply.status !== 201){
-                errorMessage.classList.remove("alert-danger-hidden");
-                errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
-            }else{
+            if (reply.status === 201){
                 errorMessage.classList.add("alert-danger-hidden");
                 successMessage.classList.remove("alert-success-hidden");
                 setTimeout(() => {
-                    ceTags.value = "";
-                    ceMedia.value = "";
-                    ceEndDate.value = "";
-                    ceDesc.value = "";
-                    ceTitle.value = "";
                     location.reload();
-                  }, "2000")
+                }, "2000")
+
+            }else{
+                throw data.errors[0].message
             }
         }
         catch(e){
+            errorMessage.classList.remove("alert-danger-hidden");
+            errorInfo.innerHTML = `<p>${e}<p>`
     
         }
     }

@@ -47,12 +47,10 @@ async function createAccount (e){
               }, "2000")
             
         }else{
-            errorMessage.classList.remove("alert-danger-hidden")
-            errorInfo.innerHTML = `<p>${data.errors[0].message}<p>`
-
-
+            throw data.errors[0].message
         }
     }catch(e){
-        console.log(e)
+        errorMessage.classList.remove("alert-danger-hidden")
+        errorInfo.innerHTML = `<p>${e}<p>`
     }
 }

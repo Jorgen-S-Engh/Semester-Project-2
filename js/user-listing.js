@@ -1,3 +1,4 @@
+import { baseUrl } from "./components/baseUrl.js";
 const userListingsContainer = document.querySelector(".user-listings__container");
 const userListingsHeadline = document.querySelector(".user-listings__headline");
 const body = document.querySelector("body");
@@ -12,7 +13,7 @@ const options = {
 async function getUserListings (){
     if(localStorage.getItem("name")!==null){
         try{
-            const reply = await fetch(`${baseUrlGL}/auction/profiles/${localStorage.getItem("name")}/listings`,options)
+            const reply = await fetch(`${baseUrl}/auction/profiles/${localStorage.getItem("name")}/listings`,options)
             const data = await reply.json();
             console.log(data)
             userListingsHeadline.innerHTML = `${localStorage.getItem("name")}'s items`
@@ -52,13 +53,7 @@ async function getUserListings (){
                         </form>
                         </div>`
     }
-
-
-
-
-
 }
-
 
 
 getUserListings();

@@ -16,6 +16,9 @@
 - Array sort og se på compare functions. Gjør dette for bid history.
 - Hvis description er null, sett inn noe annet.
 - Skriv at jeg ikke får ha .mjs når jeg tester.
+- Catch e, få opp en feilmelding.
+- I profile.html så er home ikonet skjevt på stor skjerm.
+- change avatar, hvis blankt felt, btn delete profile img.
 
 Gjøremål 5.12
 
