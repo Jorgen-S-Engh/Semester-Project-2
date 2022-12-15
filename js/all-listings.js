@@ -1,4 +1,7 @@
 import { baseUrl } from "./components/baseUrl.js";
+import { loginLogout } from "./components/login-logout.mjs";
+
+
 const listingContainer = document.querySelector(".listing__container");
 
 const baseEndPoint = "/auction/listings";

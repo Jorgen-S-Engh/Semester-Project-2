@@ -15,7 +15,8 @@
     "sass": "^1.56.1"
   },
   "scripts": {
-    "test": "npm run test-e2e",
+    "test": "npm run test-unit",
+    "test-unit": "jest",
     "test-e2e": "cypress open",
     "build": "sass sass:dist/css",
     "watch": "sass --watch sass:dist/css"
