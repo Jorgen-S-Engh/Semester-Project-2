@@ -10931,6 +10931,7 @@ textarea.form-control-lg {
 .single-listing-headline {
   width: 300px;
   height: 50px;
+  color: #323859;
 }
 
 .profile-img-small {
@@ -11005,7 +11006,7 @@ a:hover, a:visited, a:link, a:active {
   background-color: #323859;
 }
 
-.create_account_error {
+.create_account_error, .create-entry-error, .change-avatar-error {
   overflow: auto;
   max-height: 300px;
 }

@@ -1,52 +1,54 @@
-import { baseUrl } from "./components/baseUrl.js";
-const userListingsContainer = document.querySelector(".user-listings__container");
+import { baseUrl } from "./baseUrl.js";
+const userListingsContainer = document.querySelector(
+  ".user-listings__container"
+);
 const userListingsHeadline = document.querySelector(".user-listings__headline");
 const body = document.querySelector("body");
-const baseUrlGL = "https://api.noroff.dev/api/v1"
 
 const options = {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-    },
-}
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  },
+};
 
-async function getUserListings (){
-    if(localStorage.getItem("name")!==null){
-        try{
-            const reply = await fetch(`${baseUrl}/auction/profiles/${localStorage.getItem("name")}/listings`,options)
-            const data = await reply.json();
-            console.log(reply.status)
-            userListingsHeadline.innerHTML = `${localStorage.getItem("name")}'s items`
-            const listingID = []
+export async function getUserListings() {
+  if (localStorage.getItem("name") !== null) {
+    try {
+      const reply = await fetch(
+        `${baseUrl}/auction/profiles/${localStorage.getItem("name")}/listings`,
+        options
+      );
+      const data = await reply.json();
+      console.log(reply.status);
+      userListingsHeadline.innerHTML = `${localStorage.getItem(
+        "name"
+      )}'s items`;
+      const listingID = [];
 
-            for(let i = 0; i < data.length; i++){
-                console.log(i)
-                userListingsContainer.innerHTML +=
-                                            `<div class="user-listings__item text-center m-3 p-3 rounded">
+      for (let i = 0; i < data.length; i++) {
+        console.log(i);
+        userListingsContainer.innerHTML += `<div class="user-listings__item text-center m-3 p-3 rounded">
                                                 <img class="card-img-top item-img mt-3" src="${data[i].media}" alt="${data[i].title}">
                                                 <h3>${data[i].title}</h3>
                                                 <p>${data[i].description}</p>
                                                 <button class="btn btn-secondary btn-delete-listing">Delete Listing</button>
                                             </div>
-                                            `
-    
-                listingID.push(data[i].id)
-            }
-            // deleteListing(listingID);
-        }catch(e){
-            console.log("this is catch")
-            userListingsContainer.innerHTML =   `
+                                            `;
+
+        listingID.push(data[i].id);
+      }
+      // deleteListing(listingID);
+    } catch (e) {
+      console.log("this is catch");
+      userListingsContainer.innerHTML = `
                                                 <div class="api-error d-flex flex-column align-items-center text-center rounded p-3">
                                                     <p>Something went wrong, please try again</p>
                                                     <p>Error: ${e}</p>
                                                 </div>
-                                                 `
-    
-        }
-
-    }else{
-        body.innerHTML = 
-                        `
+                                                 `;
+    }
+  } else {
+    body.innerHTML = `
                         <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex justify-content-center">
                              <ul class="navbar-nav d-flex">
                                 <li class="nav-item">
@@ -59,14 +61,13 @@ async function getUserListings (){
                             <form class="text-center mt-4" action="index.html">
                                 <button class="btn btn-secondary">To Login</button>
                         </form>
-                        </div>`
-    }
+                        </div>`;
+  }
 }
-
 
 getUserListings();
 
-// Legger på en eventlistner på containeren som den skal ligge inn i. Sjekker at event.target er korrekt => gjør det man ønsker. 
+// Legger på en eventlistner på containeren som den skal ligge inn i. Sjekker at event.target er korrekt => gjør det man ønsker.
 
 // userListingsContainer.addEventListener("click", deleteListing)
 
@@ -78,7 +79,3 @@ getUserListings();
 //     };
 
 // }
-
-
-
-
