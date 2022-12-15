@@ -50,7 +50,7 @@ async function getUserListings (){
                         <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-flex justify-content-center">
                              <ul class="navbar-nav d-flex">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="feed.html"><img class="house-logo" src="img/home white.png" alt="Icon of a house"></a>
+                                    <a class="nav-link" href="home.html"><img class="house-logo" src="img/home white.png" alt="Icon of a house"></a>
                                 </li>
                             </ul>
                         </nav>

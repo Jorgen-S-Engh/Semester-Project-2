@@ -14,10 +14,11 @@
 - change avatar, hvis blankt felt, btn delete profile img.
 - Ha en spinner før api loader.
 - Mere import/export
+- Fikse footer
 
 Gjøremål 5.12
 
 - Tenary operator
 
 1. Sette inn default produktbilde hvis posten ikke har bilde fra før av.
-2. Hvis man er på feed.html uten å ha logget inn så skal man ikke få noen melding og det skal ikke være mulig å gå til profil.
+2. Hvis man er på home.html uten å ha logget inn så skal man ikke få noen melding og det skal ikke være mulig å gå til profil.

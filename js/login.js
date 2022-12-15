@@ -39,7 +39,7 @@ loginBtn.addEventListener("click", (e) => {
         localStorage.setItem("avatar", data.avatar);
         localStorage.setItem("accessToken", data.accessToken);
         localStorage.setItem("credits", data.credits);
-        window.location.href = "feed.html";
+        window.location.href = "home.html";
         errorMessage.classList.add("alert-danger-hidden")
       }else{
         throw data.errors[0].message

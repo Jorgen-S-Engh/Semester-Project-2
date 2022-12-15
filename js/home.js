@@ -1,4 +1,4 @@
-
+import { baseUrl } from "./components/baseUrl.js";
 const profileName = document.querySelector(".header-name");
 const profileNameContainer = document.querySelector(".header-name-container");
 const profileImg = document.querySelector(".profile-img-small");
@@ -35,5 +35,7 @@ btnLogout.addEventListener("click", () =>{
     localStorage.clear();
     window.location = "index.html";
 })
+
+
 
 

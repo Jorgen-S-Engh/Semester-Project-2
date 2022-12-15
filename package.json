@@ -16,7 +16,9 @@
   },
   "scripts": {
     "test": "npm run test-e2e",
-    "test-e2e": "cypress open"
+    "test-e2e": "cypress open",
+    "build": "sass sass:dist/css",
+    "watch": "sass --watch sass:dist/css"
   },
   "jest": {
     "resetMocks": false,

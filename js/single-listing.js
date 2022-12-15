@@ -21,7 +21,6 @@ async function getSingleListing(){
         console.log(data.bids)
         const today = new Date();
         const endDate = new Date(data.endsAt);
-        console.log(data)
         if(reply.status !== 200){
             throw data.errors[0].message
         }
@@ -56,9 +55,9 @@ async function getSingleListing(){
         }}
         listingsContainer.innerHTML +=
                                         `<div class="text-center m-3 p-3 rounded d-flex flex-column align-items-center">
-                                            <h3>${data.title}</h3                     
+                                            <h3 class="overflow-auto fs-5 single-listing-headline">${data.title}</h3                     
                                             <h4>Description:</h4>
-                                            <p class="description">${data.description === null || data.description === "" ? '<p><i>No description added by user</i></p>' : `${data.description}`}</p>
+                                            <p class="description overflow-auto">${data.description === null || data.description === "" ? '<p><i>No description added by user</i></p>' : `${data.description}`}</p>
                                             <p><strong>Seller:</strong></p>
                                             <p>${data.seller.name}</p>
                                             <p><strong>${today.toISOString() > endDate.toISOString() ? `Expired` : `End date:`}</strong></p>
@@ -69,40 +68,32 @@ async function getSingleListing(){
                                         `
         
         if(data.bids.length > 0){
-            const createdArray = [];
+
             const bids =[];
-            const created = new Date()
-            for (let i = 0; i < data.bids.length; i++){
-                const createdDate = new Date(data.bids[i].created);
-                createdArray.push(createdDate, data.bids[i].bidderName, data.bids[i].amount);
-                bids.push(data.bids[i].amount);
+            const bidderObj = data.bids
+            // This function sort the objects from first date to last. In rare cases the original object from the API dont come sorted by ascending date.
+            bidderObj.sort((a, b) => {
+                const dateA = new Date(a.created);
+                const dateB = new Date(b.created);
+
+                if (dateA < dateB) return -1;
+                if (dateA > dateB) return 1;
+                return 0;
+            });
+  
+            console.log(bidderObj);
+
+            for (let i = 0; i < bidderObj.length; i++){
+                bids.push(bidderObj[i].amount);
 
                 bidContainer.innerHTML += `
                 <div class="p-2 mb-2 rounded user-listings__bidder-info w-100">
-                    <p>Bidder: ${data.bids[i].bidderName}</p>
-                    <p>Amount: ${data.bids[i].amount}</p>
+                    <p>Bidder: ${bidderObj[i].bidderName}</p>
+                    <p>Amount: ${bidderObj[i].amount}</p>
                 </div>
                 
                 ` 
             }
-            // const sortedArray = createdArray.sort(function(a, b){return a-b});
-            // console.log(createdArray)
-            // console.log(sortedArray)
-
-              const createdArraySort = createdArray.reduce((acc, value, index) => {
-                if (index % 3 === 0) {
-                  acc[value] = {
-                    user: array[index + 1],
-                    count: array[index + 2]
-                  };
-                }
-                return acc;
-              }, {});
-              
-              console.log(createdArraySort);
-              
-
-
 
             highestBid.innerHTML = `<strong>${Math.max(...bids)}</strong>`
             

@@ -39,7 +39,7 @@ export async function getListings (endpoint) {
         const data = await reply.json();
 
         if(reply.status !== 200){
-            throw `${data.errors[0].message}`
+            throw `${data.errors}`
         }
         const today = new Date();
         const todayIso = today.toISOString();
@@ -51,13 +51,13 @@ export async function getListings (endpoint) {
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 item-container-product rounded m-3 p-3">
                                             <a href="product.html?id=${data[i].id}">
                                                 <div class="card-container d-flex flex-column align-items-center justify-content-start text-center">
-                                                    <h4>${data[i].title}</h4>
+                                                    <h4 class="overflow-auto mh-10 item-headline">${data[i].title}</h4>
                                                     <div class="item-media-container">
                                                         <img src="${data[i].media.length === 0 ? `img/new-product.png` : `${data[i].media.length > 1}` ? `${data[i].media[0]}` : `${data[i].media}` }" class="card-img-top item-img mt-3" alt="Image of post the with the title: ${data[i].title}">
                                                     </div>
-                                                    <div class="overflow-auto mh-20">
-                                                        <p class="description">${data[i].description === null || data[i].description === "" ? '<p><i>No description added by user</i></p>' : `${data[i].description}`}</p>
-                                                    </div>
+                                                    
+                                                    <p class="description-all-lists overflow-auto mh-20">${data[i].description === null || data[i].description === "" ? '<p><i>No description added by user</i></p>' : `${data[i].description}`}</p>
+                                                   
                                                     <p>Bids: ${data[i]._count.bids}</p>
                                                     <p>${endDateIso < todayIso ? `<p>Expired: ${endDate.toDateString()}</p>` : `<p>Ends at: ${endDate.toDateString()}</p>`}</p>
                                                     <div class="btn-more-info-container mt-2">
