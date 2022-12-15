@@ -97,8 +97,6 @@ async function getSingleListing() {
         return 0;
       });
 
-      console.log(bidderObj);
-
       for (let i = 0; i < bidderObj.length; i++) {
         bids.push(bidderObj[i].amount);
 
