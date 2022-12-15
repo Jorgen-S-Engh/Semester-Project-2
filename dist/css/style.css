@@ -11005,6 +11005,11 @@ a:hover, a:visited, a:link, a:active {
   background-color: #323859;
 }
 
+.create_account_error {
+  overflow: auto;
+  max-height: 300px;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

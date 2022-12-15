@@ -23,6 +23,10 @@ a:hover, a:visited, a:link, a:active
 .api-error{
     color:$white;
     background-color: $primary;
-    
 
+}
+
+.create_account_error{
+    overflow: auto;
+    max-height:300px;
 }
