@@ -26,12 +26,12 @@ export async function getUserListings() {
       const listingID = [];
 
       for (let i = 0; i < data.length; i++) {
-        console.log(i);
+        console.log(data[i]);
         userListingsContainer.innerHTML += `<div class="user-listings__item text-center m-3 p-3 rounded">
                                                 <img class="card-img-top item-img mt-3" src="${data[i].media}" alt="${data[i].title}">
                                                 <h3>${data[i].title}</h3>
                                                 <p>${data[i].description}</p>
-                                                <button class="btn btn-secondary btn-delete-listing">Delete Listing</button>
+                                                <p>Bids: ${data[i]._count.bids}</p>
                                             </div>
                                             `;
 
@@ -39,7 +39,6 @@ export async function getUserListings() {
       }
       // deleteListing(listingID);
     } catch (e) {
-      console.log("this is catch");
       userListingsContainer.innerHTML = `
                                                 <div class="api-error d-flex flex-column align-items-center text-center rounded p-3">
                                                     <p>Something went wrong, please try again</p>

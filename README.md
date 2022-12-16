@@ -27,3 +27,42 @@
 Gjøremål 5.12
 
 - Tenary operator
+
+
+
+
+![image]()
+
+
+
+## Description
+
+Semester project for the third semester. The assigment was to create an auction site. I buildt the frontend based on an API that was provided.  
+
+A user can create an account and view and bid on items. 
+
+## Built With
+
+<p>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,sass,js,bootstrap,github,vscode,adobexd" />
+  </a>
+</p>
+
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/Jorgen-S-Engh/Semester-Project-2.git
+```
+
+## Contact
+
+[My LinkedIn page](https://www.linkedin.com/in/j%C3%B8rgen-engh-902669100/)
+
+## Future improvments
+* The site looks a bit dark, changes reagrding colors is needed. 
+* More functionalites like being able to get the contact-us posts to the Wordpress backend.

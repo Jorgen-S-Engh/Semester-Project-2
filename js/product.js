@@ -35,6 +35,7 @@ async function getSingleListing() {
     }
     if (today.toISOString() > endDate.toISOString()) {
       btnCreateListing.disabled = true;
+      btnCreateListing.innerHTML = "Item expired";
     }
     console.log(localStorage.getItem("accessToken"));
     if (localStorage.getItem("accessToken") === null) {
