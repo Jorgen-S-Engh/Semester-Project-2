@@ -1,30 +1,5 @@
 # The Auction House | Semester-Project-2
 
-# TO DO
-
-- Vi har ikke rapport, så legg valg du tar inn i MD filen!
-- Gjør alle funksjoner om til "selv-kjørende"
-- OBS Mulighet for å ha flere bilder i create listing!
-- Search
-- all-listings.js gjøre description, bids og enddate penere.
-- For testing, må læreren kjøre testene og installere alle dependencies som Jest, esLint og Babel?
-- Skriv at jeg ikke får ha .mjs når jeg tester.
-- change avatar, hvis blankt felt, btn delete profile img.
-- Ha en spinner før api loader.
-- Mere import/export
-- Fikse footer
-
-Gjøremål 5.12
-
-- Tenary operator
-
-
-
-
-![image]()
-
-
-
 ## Description
 
 Semester project for the third semester. The assigment was to create an auction site. I buildt the frontend based on an API that was provided.  
@@ -42,6 +17,7 @@ A registered user may view Bids made on a Listing
 A registered user may use credit to make a Bid on another user’s Listing
 An unregistered user may search through Listings
 
+Please feel free to check out the live demo here: https://jorgen-s-engh.github.io/Semester-Project-2/index.html
 ## Built With
 
 <p>
