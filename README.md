@@ -1,4 +1,14 @@
-# Exam_third
+# The Auction House | Semester-Project-2
+
+## Install dependencies
+
+
+
+
+
+### Known issues and improvements 
+
+
 
 # TO DO
 
