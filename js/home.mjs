@@ -12,19 +12,24 @@ const endpointActive = "/auction/listings?_active=true";
 const btnNewest = document.querySelector(".btn-newest");
 const btnOldest = document.querySelector(".btn-oldest");
 const btnActive = document.querySelector(".btn-active-posts");
+const prodHeadline = document.querySelector(".product-home-headline");
 
 btnNewest.addEventListener("click", () => {
   listingContainer.innerHTML = "";
+  prodHeadline.innerHTML = "Newest listings";
+
   getListings(endpointDesc);
 });
 
 btnOldest.addEventListener("click", () => {
   listingContainer.innerHTML = "";
+  prodHeadline.innerHTML = "Oldes listings";
   getListings(endpointAsc);
 });
 
 btnActive.addEventListener("click", () => {
   listingContainer.innerHTML = "";
+  prodHeadline.innerHTML = "Active Listings";
   getListings(endpointActive);
 });
 

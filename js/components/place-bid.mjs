@@ -20,7 +20,6 @@ export async function placeBid(e) {
   bidError.classList.add("place-bid-error-hidden");
   const bidAmount = document.querySelector(".bid-amount").value;
   const bid = { amount: Number(bidAmount) };
-  console.log(bid);
   const options = {
     method: "POST",
     headers: {
@@ -35,8 +34,6 @@ export async function placeBid(e) {
       options
     );
     const data = await response.json();
-    console.log(response);
-    console.log(data);
     if (response.status === 200) {
       bidSuccess.classList.remove("place-bid-success-hidden");
       setTimeout(() => {

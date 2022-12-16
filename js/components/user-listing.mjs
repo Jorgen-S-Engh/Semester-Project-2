@@ -19,14 +19,12 @@ export async function getUserListings() {
         options
       );
       const data = await reply.json();
-      console.log(reply.status);
       userListingsHeadline.innerHTML = `${localStorage.getItem(
         "name"
       )}'s items`;
       const listingID = [];
 
       for (let i = 0; i < data.length; i++) {
-        console.log(data[i]);
         userListingsContainer.innerHTML += `<div class="user-listings__item text-center m-3 p-3 rounded">
                                                 <img class="card-img-top item-img mt-3" src="${data[i].media}" alt="${data[i].title}">
                                                 <h3>${data[i].title}</h3>
@@ -37,7 +35,6 @@ export async function getUserListings() {
 
         listingID.push(data[i].id);
       }
-      // deleteListing(listingID);
     } catch (e) {
       userListingsContainer.innerHTML = `
                                                 <div class="api-error d-flex flex-column align-items-center text-center rounded p-3">
@@ -65,16 +62,3 @@ export async function getUserListings() {
 }
 
 getUserListings();
-
-// Legger på en eventlistner på containeren som den skal ligge inn i. Sjekker at event.target er korrekt => gjør det man ønsker.
-
-// userListingsContainer.addEventListener("click", deleteListing)
-
-// function deleteListing(id){
-//     window.onclick = (e) => {
-//         if (e.target.classList.contains('btn-delete-listing')) {
-//           console.log("button!!!!")
-//         }
-//     };
-
-// }

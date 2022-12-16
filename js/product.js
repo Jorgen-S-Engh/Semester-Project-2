@@ -21,7 +21,6 @@ async function getSingleListing() {
       `${baseUrl}/auction/listings/${id}?_seller=true&_bids=true`
     );
     const data = await reply.json();
-    console.log(data.bids);
     const today = new Date();
     const endDate = new Date(data.endsAt);
     document.title = `The Auction House | Listing ${data.title}`;
@@ -37,7 +36,6 @@ async function getSingleListing() {
       btnCreateListing.disabled = true;
       btnCreateListing.innerHTML = "Item expired";
     }
-    console.log(localStorage.getItem("accessToken"));
     if (localStorage.getItem("accessToken") === null) {
       btnCreateListing.disabled = true;
       btnCreateListing.innerHTML = "Create an account to place bid";
