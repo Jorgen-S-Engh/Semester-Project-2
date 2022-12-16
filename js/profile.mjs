@@ -22,6 +22,7 @@ async function getUserInfo() {
   try {
     const reply = await fetch(`${baseUrl}${endpoint}`, options);
     const data = await reply.json();
+    document.title = `The Auction House | Profile for ${data.name}`;
 
     if (reply.status === 200) {
       userInfo.innerHTML = `

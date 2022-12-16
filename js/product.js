@@ -24,6 +24,7 @@ async function getSingleListing() {
     console.log(data.bids);
     const today = new Date();
     const endDate = new Date(data.endsAt);
+    document.title = `The Auction House | Listing ${data.title}`;
     if (reply.status !== 200) {
       throw data.errors[0].message;
     }
