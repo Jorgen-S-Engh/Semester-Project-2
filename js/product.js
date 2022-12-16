@@ -48,7 +48,7 @@ async function getSingleListing() {
       }
       caroContainer.innerHTML = `         
                                         <div class="carousel-item active">
-                                            <img src="img/new-product.png" class="d-block w-100 slider-images mt-4" alt="...">
+                                            <img src="img/new-product.png" class="d-block w-100 slider-images mt-4" alt="Placeholder image">
                                         </div>
                                         `;
     } else {

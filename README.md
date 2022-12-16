@@ -1,15 +1,5 @@
 # The Auction House | Semester-Project-2
 
-## Install dependencies
-
-
-
-
-
-### Known issues and improvements 
-
-
-
 # TO DO
 
 - Vi har ikke rapport, så legg valg du tar inn i MD filen!
@@ -59,10 +49,16 @@ A user can create an account and view and bid on items.
 git clone https://github.com/Jorgen-S-Engh/Semester-Project-2.git
 ```
 
+2. 
+Install dependencies
+
 ## Contact
 
-[My LinkedIn page](https://www.linkedin.com/in/j%C3%B8rgen-engh-902669100/)
+[My LinkedIn page](https://www.linkedin.com/in/j%C3%B8rgen-wiksaas-engh-902669100/)
+
+## Known issues
+* During component testing, the system did not allow the use of the '.mjs' extension. As a result, some of the components had to be converted to use the '.js' extension instead.
 
 ## Future improvments
-* The site looks a bit dark, changes reagrding colors is needed. 
-* More functionalites like being able to get the contact-us posts to the Wordpress backend.
+* Implement additional functionality. The API allows for the implementation of more functionality, such as the ability to delete one's own listing. 
+* Improve styling, particularly on product items."

@@ -19,6 +19,11 @@ const options = {
  */
 
 async function getUserInfo() {
+  userInfo.innerHTML = `                
+                          <div class="spinner-border text-light" role="status">
+                              <span class="visually-hidden">Loading...</span>
+                          </div>
+                          `;
   try {
     const reply = await fetch(`${baseUrl}${endpoint}`, options);
     const data = await reply.json();
@@ -32,7 +37,9 @@ async function getUserInfo() {
         <p>Listings: <strong>${data._count.listings}<p></strong>
         `;
     } else {
-      throw data.errors[0].message;
+      throw `error code: ${
+        reply.status === 429 ? "Too many request" : "please try again"
+      }`;
     }
   } catch (e) {
     userInfo.innerHTML = `    

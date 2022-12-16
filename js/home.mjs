@@ -37,15 +37,21 @@ btnActive.addEventListener("click", () => {
  */
 
 export async function getListings(endpoint) {
+  listingContainer.innerHTML = `                
+                                  <div class="spinner-border text-light" role="status">
+                                      <span class="visually-hidden">Loading...</span>
+                                  </div>`;
+
   try {
     const reply = await fetch(`${baseUrl}${endpoint}`);
     const data = await reply.json();
 
     if (reply.status !== 200) {
-      throw `${data.errors}`;
+      throw `${data.errors[i]}`;
     }
     const today = new Date();
     const todayIso = today.toISOString();
+    listingContainer.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
       const endDate = new Date(data[i].endsAt);
       const endDateIso = endDate.toISOString();

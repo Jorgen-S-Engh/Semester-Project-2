@@ -25,42 +25,38 @@ async function createAccount(e) {
     password: loginPassword,
     avatar: loginAvatar,
   };
+  let regexEmail = /^[\w-.]+@(stud.noroff).no/;
+  let validateEmail = regexEmail.test(loginEmail);
 
-  function isValidEmail(email) {
-    return email.endsWith("@stud.noroff.no");
-  }
-  isValidEmail(loginEmail);
-
-  if (isValidEmail("test@stud.noroff.no")) {
-    console.log("Valid email");
-  } else {
-    console.log("Invalid email");
+  if (!validateEmail) {
+    errorMessage.classList.remove("alert-danger-hidden");
+    errorInfo.innerHTML = `<p>Only emails ending in @stud.noroff.no may register<p>`;
+    return;
   }
 
-  // try{
-  //     const response = await fetch(`${baseUrl}${endpoint}`, {
-  //         method:"POST",
-  //         headers:{
-  //             "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify(user)
-  //     })
-  //     const data = await response.json();
-  //     if (response.status === 200 || response.status === 201){
-  //         successMessage.classList.remove("alert-success-hidden")
-  //         errorMessage.classList.add("alert-danger-hidden")
-  //         localStorage.clear()
-  //         localStorage.setItem("password",loginPassword);
-  //         localStorage.setItem("email", loginEmail);
-  //         setTimeout(() => {
-  //             window.location.href = "index.html"
-  //           }, "2000")
-
-  //     }else{
-  //         throw data.errors[0].message
-  //     }
-  // }catch(e){
-  //     errorMessage.classList.remove("alert-danger-hidden")
-  //     errorInfo.innerHTML = `<p>${e}<p>`
-  // }
+  try {
+    const response = await fetch(`${baseUrl}${endpoint}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    const data = await response.json();
+    if (response.status === 200 || response.status === 201) {
+      successMessage.classList.remove("alert-success-hidden");
+      errorMessage.classList.add("alert-danger-hidden");
+      localStorage.clear();
+      localStorage.setItem("password", loginPassword);
+      localStorage.setItem("email", loginEmail);
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, "2000");
+    } else {
+      throw data.errors[0].message;
+    }
+  } catch (e) {
+    errorMessage.classList.remove("alert-danger-hidden");
+    errorInfo.innerHTML = `<p>${e}<p>`;
+  }
 }
