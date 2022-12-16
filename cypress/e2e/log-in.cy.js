@@ -4,7 +4,5 @@ describe("Login test", () => {
     cy.get(".login_email").type("jorgen@stud.noroff.no");
     cy.get(".login_password").type("12345jorgen");
     cy.get(".login_btn").click();
-
-    // Add assertions to check that the login was successful
   });
 });
