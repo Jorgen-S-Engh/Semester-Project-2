@@ -48,9 +48,15 @@ A user can create an account and view and bid on items.
 ```bash
 git clone https://github.com/Jorgen-S-Engh/Semester-Project-2.git
 ```
-
 2. 
-Install dependencies
+* npm install
+* npm run build
+
+For testing:
+* Install dependencies
+* npm run test-unit
+* npm run test-e2e
+
 
 ## Contact
 

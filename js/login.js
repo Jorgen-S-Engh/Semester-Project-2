@@ -26,7 +26,7 @@ loginBtn.addEventListener("click", (e) => {
     let validateEmail = regexEmail.test(loginEmail);
     if (!validateEmail) {
       errorMessage.classList.remove("alert-danger-hidden");
-      errorInfo.innerHTML = `<p>Only emails ending in @stud.noroff.no may register<p>`;
+      errorInfo.innerHTML = `<p>Only emails ending in @stud.noroff.no may Log in<p>`;
       return;
     }
     try {
